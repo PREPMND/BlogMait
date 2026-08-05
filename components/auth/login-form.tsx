@@ -44,7 +44,7 @@ export default function LoginForm() {
         }
 
         console.log("Valid Data:", data);
-        toas
+        toast
         seterrorLogin(false);
         setErorrMesssage("");
     };

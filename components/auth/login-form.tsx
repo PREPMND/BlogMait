@@ -15,7 +15,7 @@ type LoginFormValues = {
 };
 
 export default function LoginForm() {
-    const [errorLogin,seterrorLogin]=useState(false);
+    const [errorLogin, seterrorLogin] = useState(false);
 
     const form = useForm<LoginFormValues>({
         defaultValues: {
@@ -67,8 +67,8 @@ export default function LoginForm() {
             </div>
             <div>{errorLogin && (
                 <div>
-
-            </div>)}</div>
+                    
+                </div>)}</div>
             <Button type="submit">
                 Login
             </Button>

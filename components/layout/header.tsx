@@ -33,6 +33,9 @@ export default function Header() {
                 <div className="hidden md:block">
                     <Search/>
                 </div>
+                <div>
+                    
+                </div>
             </div>
         </div>
     )

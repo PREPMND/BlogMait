@@ -33,9 +33,7 @@ export default function Header() {
                 <div className="hidden md:block">
                     <Search/>
                 </div>
-                <div>
-                    
-                </div>
+                <Button className="hidden md:block" variant="outline">Login</Button>
             </div>
         </div>
     )

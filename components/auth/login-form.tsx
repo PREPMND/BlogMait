@@ -71,6 +71,7 @@ export default function LoginForm() {
             <div className="space-y-2">
                 <Label htmlFor="password">Password</Label>
                 <Input
+                    className="w-[]"
                     id="password"
                     type="password"
                     placeholder="Enter your password"

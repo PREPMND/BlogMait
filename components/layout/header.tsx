@@ -23,7 +23,7 @@ export default function Header() {
                             <Link className={`${item.label=='Contact'?'hidden md:flex':'flex'}
                             border-b-2 border-r-2 border-gray-200 
                              text-[16px] md:text-[20px] 
-                            hover:border-gray-400 transition-all duration-300 py-1 md:py-[6px] px-2 rounded-md
+                            hover:border-gray-400 transition-all duration-300 py-1 md:py-1.5 px-2 rounded-md
                             `} key={item.label} href={item.href}>
                                 {item.label}
                             </Link>

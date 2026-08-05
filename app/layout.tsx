@@ -24,8 +24,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute={'class'} defaultTheme="system" enableSystem disableTransitionOnChange containerClassName="flex flex-col justify-center items-center overflow-x-hidden mx-[5%] md:mx-[20%] flex-1">
+      <body className="min-h-full  flex flex-col">
+        <ThemeProvider attribute={'class'} defaultTheme="system" enableSystem disableTransitionOnChange containerClassName="flex flex-col justify-center items-center mx-[5%] md:mx-[20%] flex-1">
           {children}
         </ThemeProvider>
       </body>

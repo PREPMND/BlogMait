@@ -13,7 +13,7 @@ export default function Header() {
             label: 'Contact', href: "/contact"
         }
     ]
-
+    const router =useRouter();
 
     return (
         <div className="w-full select-none px-4 pt-2 z-50 rounded-b-md rounded-l-sm rounded-r-sm bg-white dark:bg-neutral-900 pb-2 shadow-sm shadow-olive-300 dark:shadow-neutral-400 border-b border-transparent dark:border-neutral-800 sticky top-0 mb-2 md:top-2 md:w-[95%] mx-auto h-18 flex justify-between items-center transition-colors duration-200">

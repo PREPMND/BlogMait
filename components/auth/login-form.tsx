@@ -16,7 +16,7 @@ type LoginFormValues = {
 
 export default function LoginForm() {
     const [errorLogin, seterrorLogin] = useState(false);
-
+    const [errorMessage,set]
     const form = useForm<LoginFormValues>({
         defaultValues: {
             email: "",
@@ -67,7 +67,7 @@ export default function LoginForm() {
             </div>
             <div>{errorLogin && (
                 <div>
-                    
+
                 </div>)}</div>
             <Button type="submit">
                 Login

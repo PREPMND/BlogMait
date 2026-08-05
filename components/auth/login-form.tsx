@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { toast } from "../ui/toast";
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
@@ -43,6 +44,7 @@ export default function LoginForm() {
         }
 
         console.log("Valid Data:", data);
+        toas
         seterrorLogin(false);
         setErorrMesssage("");
     };
@@ -76,7 +78,7 @@ export default function LoginForm() {
             <div>
                 {!errorLogin && (
                     <div>
-                        
+
                     </div>
                 )}
             </div>

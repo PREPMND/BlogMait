@@ -9,7 +9,7 @@ export default function AuthLayout() {
 
     return (
         <div className="flex select-none *:select-none flex-col justify-center  items-center min-h-full min-w-full">
-            <div className=" md:w-[40%] w-[50%] md:h-20 h-16 mt-10 md:text-3xl text-2xl font-medium flex items-center justify-center  rounded-md
+            <div className=" md:w-[40%] w-[50%] md:h-20 h-[48px] mt-10 md:text-3xl text-2xl font-medium flex items-center justify-center  rounded-md
             dark:bg-neutral-800  ">
                 Welcome
             </div>

@@ -18,7 +18,7 @@ export default function Header() {
     return (
         <div className="w-full sticky top-2  md:w-[95%] mx-auto h-18 flex justify-between items-center">
             <div className="flex items-center h-full justify-self-start md:w-[60%]" >
-                <nav className="flex items-center gap-4 w-full text-gray-700">
+                <nav className="flex items-center gap-8 w-full text-gray-700">
                     {
                         navItems.map((item) => (
                             <Link className={`${item.label=='Contact' || item.label=='Home'?'hidden md:flex':'flex'}

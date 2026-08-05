@@ -58,7 +58,7 @@ export default function LoginForm() {
 
     return (
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 *:text-[18px] flex flex-col justify-center">
-            <div className="space-y-2 md:max-w-[70%] mx-auto">
+            <div className="space-y-2 md:max-w-[90%] mx-auto">
                 <Label htmlFor="email">Email</Label>
                 <Input
                     className="min-h-[38px]"
@@ -69,7 +69,7 @@ export default function LoginForm() {
                 />
             </div>
 
-            <div className="space-y-2 md:max-w-[70%] ">
+            <div className="space-y-2 md:max-w-[70%] mx-auto">
                 <Label htmlFor="password">Password</Label>
                 <Input
                     className="min-h-[38px]"

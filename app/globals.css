@@ -3,6 +3,10 @@
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+@theme {
+  --font-heading: var(--font-poppins);
+  --font-rounded-body: var(--font-quicksand);
+}
 
 @theme inline {
   --color-background: var(--background);

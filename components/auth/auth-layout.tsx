@@ -1,9 +1,10 @@
 'use-client'
 
 import { Tabs } from "@base-ui/react"
+import { useState } from "react"
 
 export default function AuthLayout(){
-    const [activeTab,setactiveTab]=useS
+    const [activeTab,setactiveTab]=useState('login')
 
     return(
         <div className="flex justify-center items-center min-h-[60vh]">

@@ -65,7 +65,7 @@ export default function LoginForm() {
                     {...form.register("password")}
                 />
             </div>
-            <div>{error}</div>
+            <div>{errorLogin && }</div>
             <Button type="submit">
                 Login
             </Button>

@@ -3,6 +3,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes"
 import Header from "../layout/header"
 export function ThemeProvider({
     children,
+    containerClass
     ...props
 }:ExtendedThemeProviderProps){
     return (

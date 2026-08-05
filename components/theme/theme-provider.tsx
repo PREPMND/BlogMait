@@ -14,7 +14,7 @@ export function ThemeProvider({
     ...props
 }:ExtendedThemeProviderProps){
     return (
-        <NextThemesProvider className={className} {...props}>
+        <NextThemesProvider {...props}>
             <Header/>
             <main className={cn(" mx-auto",containerClassName)}>
                 {children}

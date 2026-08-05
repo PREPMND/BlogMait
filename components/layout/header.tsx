@@ -16,7 +16,7 @@ export default function Header() {
 
 
     return (
-        <div className="w-full select-none px-4 z-50 rounded-b-md rounded-l-sm rounded-r-sm bg-white dark:bg-neutral-900 pb-2 shadow-sm shadow-olive-300 dark:shadow-none border-b border-transparent dark:border-neutral-800 sticky top-2 md:w-[95%] mx-auto h-18 flex justify-between items-center transition-colors duration-200">
+        <div className="w-full select-none px-4 z-50 rounded-b-md rounded-l-sm rounded-r-sm bg-white dark:bg-neutral-900 pb-2 shadow-sm shadow-olive-300 dark:shadow- border-b border-transparent dark:border-neutral-800 sticky top-2 md:w-[95%] mx-auto h-18 flex justify-between items-center transition-colors duration-200">
             <div className="flex items-center h-full justify-self-start md:w-[50%]" >
                 <nav className="flex items-center gap-8 justify-between w-[60%] text-gray-700 dark:text-neutral-300">
                     {

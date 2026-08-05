@@ -4,7 +4,7 @@ import Header from "../layout/header"
 import { cn } from "@/lib/utils"
 
 interface ExtendedThemeProviderProps extends ThemeProviderProps{
-    containerClassName?
+    containerClassName?:string;
 }
 
 export function ThemeProvider({

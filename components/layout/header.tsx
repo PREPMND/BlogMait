@@ -32,7 +32,7 @@ export default function Header() {
             </div>
             <div className="flex justify-center items-center gap-2 md:gap-4">
                 <div className="hidden md:block">
-                    <input className="w-">
+                    <input className="w-[20%]">
                     </input>
                     <Search/>
                     

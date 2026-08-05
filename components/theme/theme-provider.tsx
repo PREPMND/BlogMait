@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 interface ExtendedThemeProviderProps extends ThemeProviderProps{
     containerClassName?:string;
 }
-//gp to ne
+//gp to shadcn next js theme
 export function ThemeProvider({
     children,
     containerClassName,

@@ -3,7 +3,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes"
 import Header from "../layout/header"
 import { cn } from "@/lib/utils"
 
-interface ExtendedThemeProviderProps
+interface ExtendedThemeProviderProps extends Theme
 
 export function ThemeProvider({
     children,

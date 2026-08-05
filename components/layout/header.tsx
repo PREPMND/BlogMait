@@ -16,7 +16,7 @@ export default function Header() {
 
 
     return (
-        <div className="w-full z-50 bg-white pb-2 shadow-b-md shadow- sticky top-2  md:w-[95%] mx-auto h-18 flex justify-between items-center">
+        <div className="w-full z-50 bg-white pb-2 shadow-b-md shadow-lime-100 sticky top-2  md:w-[95%] mx-auto h-18 flex justify-between items-center">
             <div className="flex items-center h-full justify-self-start md:w-[50%]" >
                 <nav className="flex items-center gap-8 justify-between w-[60%]  text-gray-700">
                     {

@@ -8,7 +8,6 @@ const LoginSchema=({
     password:string().min(8).max(30),
 })
 
-type LoginFormValues=z.infer<typeof LoginSchema>
 
 export default function LoginForm(){
     const [loading ,setIsLoading]=useState(false);

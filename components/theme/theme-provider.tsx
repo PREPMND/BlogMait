@@ -9,7 +9,7 @@ export function ThemeProvider({
     return (
         <NextThemesProvider {...props}>
             <Header/>
-            <main className={cn("",containerClassName)}>
+            <main className={cn("con",containerClassName)}>
                 {children}
             </main>
         </NextThemesProvider>

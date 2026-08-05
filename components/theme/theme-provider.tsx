@@ -1,9 +1,11 @@
 'use-client'
-import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { ThemeProvider as NextThemesProvider, ThemeProviderProps } from "next-themes"
 import Header from "../layout/header"
 import { cn } from "@/lib/utils"
 
-interface ExtendedThemeProviderProps extends Theme
+interface ExtendedThemeProviderProps extends ThemeProviderProps{
+    
+}
 
 export function ThemeProvider({
     children,

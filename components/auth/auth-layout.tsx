@@ -16,14 +16,6 @@ export default function AuthLayout() {
                     <TabsTrigger value="login">Login</TabsTrigger>
                     <TabsTrigger value="register">Register</TabsTrigger>
                 </TabsList>
-
-                <TabsContent value="login">
-                    <p>Login content goes here.</p>
-                </TabsContent>
-
-                <TabsContent value="register">
-                    <p>Register content goes here.</p>
-                </TabsContent>
             </Tabs>
         </div>
     )

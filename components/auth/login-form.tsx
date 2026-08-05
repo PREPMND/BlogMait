@@ -36,6 +36,7 @@ export default function LoginForm() {
 
         if (!password.ok) {
             console.log(password.error);
+            seterrorLogin
             return;
         }
 

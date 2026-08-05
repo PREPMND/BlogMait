@@ -24,8 +24,10 @@ export default function Header()
             <nav className="flex gap-6">
                 {
                     navItems.map((item,index)=>(
-                        <Link key={item.label}
-                    )
+                        <Link key={item.label} href={item.href}>
+                            {item.label}
+                        </Link>
+                    ))
                 }
             </nav>
             </div>

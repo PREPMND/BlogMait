@@ -5,6 +5,8 @@ export function ThemeProvider({
     ...props
 }:ExtendedThemeProviderProps){
     return (
-        <NextThemesProvider
+        <NextThemesProvider {...props}>
+            
+        </NextThemesProvider>
     )
 }

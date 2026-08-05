@@ -8,7 +8,9 @@ export default function Container({children,className}: containerProps)
 {
     return (
         <div>
-            <div></div></diuv>
+            <div>
+                
+            </div>
         </div>
     )
 }

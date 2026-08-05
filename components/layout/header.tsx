@@ -3,9 +3,6 @@ import Link from "next/link"
 export default function Header() {
     const navItems = [
         {
-            label: 'Home', href: "/"
-        },
-        {
             label: 'Create', href: "/post/create"
         },
         {

@@ -68,10 +68,10 @@ export default function LoginForm() {
                 />
             </div>
 
-            <div className="space-y-2 max-w-[70%] min-h-12">
+            <div className="space-y-2 max-w-[70%] ">
                 <Label htmlFor="password">Password</Label>
                 <Input
-                    className=""
+                    className="min-h-12"
                     id="password"
                     type="password"
                     placeholder="Enter your password"

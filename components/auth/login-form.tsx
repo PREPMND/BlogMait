@@ -72,7 +72,7 @@ export default function LoginForm() {
                 <div className="text-red-400 text-[14px]">
                     {errorMessage}
                 </div>)}</div>
-            <Button type="submit">
+            <Button className={`w-[]`} type="submit">
                 Login
             </Button>
         </form>

@@ -32,7 +32,7 @@ export default function Header() {
             </div>
             <div className="flex justify-center items-center gap-2 md:gap-4">
                 <div className="hidden  md:flex">
-                    <input className="w-[20%] border border-gray-300 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
+                    <input className="min-w-[20%] border border-gray-300 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
                     </input>
                     <Search/>
                     

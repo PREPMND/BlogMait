@@ -6,13 +6,13 @@ export default function Header()
 {
     const navItems=[
         {
-            label:'Home' , href="/" 
+            label:'Home' , href:"/" 
         },
         {
-            label:'About' , href="/about" 
+            label:'About' , href:"/about" 
         },
         {
-            label:'Contact' , href="/contact"
+            label:'Contact' , href:"/contact"
         }
     ]
 

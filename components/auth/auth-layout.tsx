@@ -2,7 +2,9 @@
 export default function AuthLayout(){
     return(
         <div>
-            Au
+            <div class>
+                Welcome
+            </div>
         </div>
     )
 }

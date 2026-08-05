@@ -19,7 +19,7 @@ export default function AuthLayout() {
                     <TabsTrigger value="register">Register</TabsTrigger>
                 </TabsList>
                 <TabsContent  value="login">
-                    <div className="p-4">
+                    <div className="pt-4">
                         <LoginForm/>
                     </div>
                 </TabsContent>

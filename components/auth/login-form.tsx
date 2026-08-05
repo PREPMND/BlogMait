@@ -5,6 +5,9 @@ const LoginSchema=({
     email:string().min(5).max(30).contains("@").contains("."),
     password:string().min(8).max(30),
 })
+
+type lgoi
+
 export default function LoginForm(){
     return (
         <div>

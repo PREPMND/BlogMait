@@ -8,7 +8,7 @@ export function ThemeProvider({
     return (
         <NextThemesProvider {...props}>
             <Header/>
-            <main className={cn("",classN)}>
+            <main className={cn("",className)}>
                 {children}
             </main>
         </NextThemesProvider>

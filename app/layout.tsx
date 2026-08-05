@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full overflow-x-hidden flex flex-col">
-        <ThemeProvider attribute={'class'} defaultTheme="system" enableSystem disableTransitionOnChange containerClassName="flex flex-col justify-center items-center md:w-[70%] border-1 border-gray-300 flex-1">
+        <ThemeProvider attribute={'class'} defaultTheme="system" enableSystem disableTransitionOnChange containerClassName="flex flex-col justify-center items-center md:w-[70%] border-1 border-gray-300 rounded-md flex-1">
           {children}
         </ThemeProvider>
       </body>

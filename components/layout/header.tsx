@@ -21,7 +21,7 @@ export default function Header() {
                 <nav className="flex justify-evenly items-center gap-4 w-full text-gray-700">
                     {
                         navItems.map((item) => (
-                            <Link className={`${item.label=='Contact' || item.label=='Create'?'hidden md:flex':'flex'}
+                            <Link className={`${item.label=='Contact' || item.label=='Home'?'hidden md:flex':'flex'}
                             border-b-2 border-r-2 border-gray-200 
                              text-[16px] md:text-[20px] 
                             hover:border-gray-400 transition-all duration-300 py-1 md:py-1.5 px-2 md:px-2.5 rounded-md

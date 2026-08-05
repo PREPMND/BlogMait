@@ -6,7 +6,7 @@ export default function Header()
 {
     const navItems=[
         {
-            label:Home 
+            label:'Home' , href="/" 
         },
         {
 

@@ -17,7 +17,7 @@ export default function Header() {
 
     return (
         <div className="w-full sticky top-2  md:w-[95%] mx-auto h-18 flex justify-between items-center">
-            <div className="flex items-center h-full md:w-[60%]" >
+            <div className="flex items-center h-full mx-auto md:w-[60%]" >
                 <nav className="flex justify-evenly items-center gap-4 w-full text-gray-700">
                     {
                         navItems.map((item) => (

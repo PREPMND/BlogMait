@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
 interface containerProps{
@@ -7,7 +8,7 @@ interface containerProps{
 export default function Container({children,className}: containerProps)
 {
     return (
-        <div clas>
+        <div className={cn()}>
             <div>
 
             </div>

@@ -1,1 +1,1 @@
-rafc
+export function f

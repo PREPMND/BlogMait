@@ -69,8 +69,8 @@ export default function LoginForm() {
                 />
             </div>
             <div>{errorLogin && (
-                <div>
-                    {}
+                <div className="">
+                    {errorMessage}
                 </div>)}</div>
             <Button type="submit">
                 Login

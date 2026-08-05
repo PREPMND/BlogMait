@@ -8,7 +8,7 @@ export default function AuthLayout() {
 
     return (
         <div className="flex flex-col justify-center items-center min-w-full bg-card">
-            <div classNam rounded-md
+            <div className="w-full  rounded-md
             bg-neutral-800 ">
                 Welcome
             </div>

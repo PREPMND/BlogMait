@@ -68,7 +68,7 @@ export default function LoginForm() {
                 />
             </div>
 
-            <div className="space-y-2 max-w-[70%]">
+            <div className="space-y-2 max-w-[70%] min-h-12">
                 <Label htmlFor="password">Password</Label>
                 <Input
                     className=""

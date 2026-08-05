@@ -1,5 +1,5 @@
 'use-client'
-import {}
+import { ThemeProvider as NextTheme } from "next-themes"
 export function ThemeProvider({
     children,
     ...props

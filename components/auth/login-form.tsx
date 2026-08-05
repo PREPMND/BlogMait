@@ -22,8 +22,8 @@ export default function LoginForm() {
     });
 
     const onSubmit = (data: LoginFormValues) => {
-        const email = LoginSchema.email.safeCheck(data.email);
-        const password = LoginSchema.password.safeCheck(data.password);
+        const email = LoginSchema.email.check(data.email);
+        const password = LoginSchema.password.check(data.password);
 
         if (!email.ok) {
             console.log(email.error);

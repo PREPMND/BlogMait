@@ -8,7 +8,7 @@ export default function NotFound() {
             <Button className={`text-[13px] md:text-[16px]`} render={<Link href="/" />}>
                 <Link href="/">Go back home</Link>
             </Button>
-            <
+            <LoadingAsset/>
         </div>
     )
 }

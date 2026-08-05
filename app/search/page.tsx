@@ -1,8 +1,8 @@
-export default function SearchPage(){
+export default function Searchpage(){
     return(
         <>
         <div>
-            post detail
+            Searchpage
         </div>
         </>
     )

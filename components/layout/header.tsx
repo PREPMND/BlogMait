@@ -9,10 +9,10 @@ export default function Header()
             label:'Home' , href="/" 
         },
         {
-
+            label:'About' , href="/about" 
         },
         {
-
+            label:'Contact' , href="/contact"
         }
     ]
 

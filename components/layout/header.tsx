@@ -1,6 +1,7 @@
 import { Search } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
 export default function Header() {
     const navItems = [
         {
@@ -38,8 +39,10 @@ export default function Header() {
                     </input>
                     <Search className="hidden md:flex text-gray-500 dark:text-neutral-400" />
                 </div>
-                <Button className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button>
-            </div>
+                <Button 
+                className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button>
+            </di
+            v>
         </div>
 
     )

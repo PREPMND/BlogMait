@@ -74,7 +74,10 @@ export default function LoginForm() {
                 </div>)}
             </div>
             <div>
-                {!errorLogin }
+                {!errorLogin && (
+                    <div>
+                    </div>
+                )}
             </div>
             <Button className={`w-[110px] mx-auto`} type="submit">
                 Login

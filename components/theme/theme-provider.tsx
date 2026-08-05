@@ -16,7 +16,7 @@ export function ThemeProvider({
     return (
         <NextThemesProvider {...props}>
             <Header/>
-            <main className={cn(" mx-auto",containerClassName)}>
+            <main className={cn("h-full flex flex-col",containerClassName)}>
                 {children}
             </main>
             <Footer/>

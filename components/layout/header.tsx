@@ -1,3 +1,4 @@
+import { Search } from "lucide-react"
 import Link from "next/link"
 export default function Header() {
     const navItems = [
@@ -33,7 +34,7 @@ export default function Header() {
             </div>
             <div className="flex justify-center items-center gap-2 md:gap-4">
                 <div className="hidden md:block">
-                    
+                    <Search
                 </div>
             </div>
         </div>

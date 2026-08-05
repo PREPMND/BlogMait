@@ -1,10 +1,10 @@
 
-export default function Header({children,className}: containerProps)
+export default function Header()
 {
     return (
         <div className={cn("container mx-auto px-4", className)}>
             <div>
-                {children}
+            
             </div>
         </div>
     )

@@ -33,6 +33,7 @@ export default function Header() {
             <div className="flex justify-center items-center gap-2 md:gap-4">
                 <div className="hidden md:block">
                     <Search/>
+                    
                 </div>
                 <Button className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button>
             </div>

@@ -1,1 +1,1 @@
-export default function Container
+export default function Container({})

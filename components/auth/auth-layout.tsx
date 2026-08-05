@@ -7,7 +7,7 @@ export default function AuthLayout() {
     const [activeTab, setactiveTab] = useState('login')
 
     return (
-        <div className="flex flex-col justify-center pt-5 items-center min-h-full min-w-full bg-card">
+        <div className="flex flex-col justify-center mt-10 items-center min-h-full min-w-full bg-card">
             <div className="w-[40%] h-20 text-3xl font-medium flex items-center justify-center  rounded-md
             bg-neutral-800 ">
                 Welcome

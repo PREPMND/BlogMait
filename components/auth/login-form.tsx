@@ -61,6 +61,7 @@ export default function LoginForm() {
             <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
+                    className="min-h-[38px]"
                     id="email"
                     type="email"
                     placeholder="Enter your email"

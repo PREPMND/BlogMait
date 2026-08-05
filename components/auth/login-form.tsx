@@ -36,11 +36,12 @@ export default function LoginForm() {
 
         if (!password.ok) {
             console.log(password.error);
-            seterrorLogin
+            seterrorLogin(true);
             return;
         }
 
         console.log("Valid Data:", data);
+        s
     };
 
     return (

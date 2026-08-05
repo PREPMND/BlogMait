@@ -2,6 +2,6 @@ import { ReactNode } from "react";
 
 interface containerProps{
     children: ReactNode;
-    className:string
+    className?:string;
 }
 export default function Container({children,className}: containerProps)

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 interface ExtendedThemeProviderProps extends ThemeProviderProps{
     containerClassName?:string;
 }
-
+//gp 
 export function ThemeProvider({
     children,
     containerClassName,

@@ -19,7 +19,7 @@ export default function Header() {
                 <nav className="flex justify-evenly items-center gap-4 w-full text-[14px] md:text-[18px]  text-gray-700">
                     {
                         navItems.map((item) => (
-                            <Link className={`${item.label=='Contact'?''}`} key={item.label} href={item.href}>
+                            <Link className={`${item.label=='Contact'?'hidden'}`} key={item.label} href={item.href}>
                                 {item.label}
                             </Link>
                         ))

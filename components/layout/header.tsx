@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
-
+//cn merges enerything in class
 interface containerProps{
     children: ReactNode;
     className?:string;

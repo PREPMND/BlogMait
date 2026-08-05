@@ -1,8 +1,8 @@
-export default function PostDetail(){
+export default function ProfileDetail(){
     return(
         <>
         <div>
-            post detail
+            profile detail
         </div>
         </>
     )

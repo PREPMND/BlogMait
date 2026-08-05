@@ -2,7 +2,7 @@ import { string ,} from "@preplabs/validator";
 import {z} from "zod";
 
 const LoginSchema=({
-    email:string().min(5).max(30);
+    email:string().min(5).max(30).contains("@").contains("."),
     password:string;
 })
 export default function LoginForm(){

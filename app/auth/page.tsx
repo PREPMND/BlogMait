@@ -1,4 +1,4 @@
-export default function PosDetail(){
+export default function Authpage(){
     return(
         <>
         <div>

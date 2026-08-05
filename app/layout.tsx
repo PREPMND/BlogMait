@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono ,Playfair_Display, Quicksand} from "next/font/google";
+import { Geist, Geist_Mono ,Playfair_Display, Poppins, Quicksand} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 

@@ -1,1 +1,1 @@
-export default function Container({childeren})
+export default function Container({children,className})

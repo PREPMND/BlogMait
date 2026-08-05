@@ -1,7 +1,7 @@
 import { string } from "@preplabs/validator";
 import {z} from "zod";
 
-const 
+const LoginSchema
 export default function LoginForm(){
     return (
         <div>

@@ -1,5 +1,6 @@
 'use-client'
 import { ThemeProvider as NextThemesProvider } from "next-themes"
+import Header from "../layout/header"
 export function ThemeProvider({
     children,
     ...props
@@ -8,7 +9,7 @@ export function ThemeProvider({
         <NextThemesProvider {...props}>
             <Header/>
             <main>
-                {}
+                {children}
             </main>
         </NextThemesProvider>
     )

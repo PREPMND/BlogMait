@@ -16,7 +16,7 @@ export default function Header() {
     return (
         <div className="w-full sticky top-1 md:w-[90%] mx-auto h-16 flex justify-center items-center">
             <div className="flex items-center w-full" >
-                <h3 className="text-3xl font-bold mr-3">Logo</h3>
+                <h3 className="text-3xl font-bold ml-2 mr-3">Logo</h3>
                 <nav className="flex justify-evenly items-center gap-4 w-full text-[14px] md:text-[18px]  text-gray-700">
                     {
                         navItems.map((item) => (

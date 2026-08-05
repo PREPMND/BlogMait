@@ -81,7 +81,7 @@ export default function LoginForm() {
             </div>
             <div>
                 {!errorLogin && (
-                    <div className="flex items-center gap-2 w-[250px] rounded-md bg-green-100 px-[10px] py-2 mx-auto  text-green-700">
+                    <div className="flex items-center gap-1 w-[250px] rounded-md bg-green-100 px-[10px] py-2 mx-auto  text-green-700">
                         <span>✅</span>
                         <span>Login <span className="hidden md:flex">successful!</span></span>
                     </div>

@@ -1,3 +1,2 @@
-export default function Container({children,className}: containerProps
-    
-)
+t
+export default function Container({children,className}: containerProps)

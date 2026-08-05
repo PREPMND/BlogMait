@@ -18,6 +18,7 @@ export function ThemeProvider({
             <main className={cn("container mx-auto px-4",containerClassName)}>
                 {children}
             </main>
+            
         </NextThemesProvider>
     )
 }

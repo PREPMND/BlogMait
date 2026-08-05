@@ -16,7 +16,7 @@ type LoginFormValues = {
 
 export default function LoginForm() {
     const [errorLogin, seterrorLogin] = useState(false);
-    const [errorMessage,setErorrMesssage] =useState<string|undefined>("");
+    const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
     const form = useForm<LoginFormValues>({
         defaultValues: {
@@ -44,7 +44,11 @@ export default function LoginForm() {
         }
 
         console.log("Valid Data:", data);
-        toast.success("Login Succesfull")
+        setSuccess(true);
+
+        setTimeout(() => {
+            setSuccess(false);
+        }, 2500);
         seterrorLogin(false);
         setErorrMesssage("");
     };

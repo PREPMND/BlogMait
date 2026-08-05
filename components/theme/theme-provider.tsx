@@ -7,6 +7,9 @@ export function ThemeProvider({
     return (
         <NextThemesProvider {...props}>
             <Header/>
+            <main>
+                {}
+            </main>
         </NextThemesProvider>
     )
 }

@@ -1,8 +1,8 @@
-export default function CreatePost(){
+export default function EditPost(){
     return (
         <>
         <div>
-            create post
+            edit post
         </div>
         </>
     )

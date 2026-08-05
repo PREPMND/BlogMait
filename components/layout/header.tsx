@@ -16,16 +16,16 @@ export default function Header() {
 
 
     return (
-        <div className="w-full select-none px-4 z-50 rounded-b-md rounded-l-sm rounded-r-sm bg-white pb-2 shadow-sm  shadow-olive-300 sticky top-2  md:w-[95%] mx-auto h-18 flex justify-between items-center">
+        <div className="w-full select-none px-4 z-50 rounded-b-md rounded-l-sm rounded-r-sm bg-white dark:bg-neutral-900 pb-2 shadow-sm shadow-olive-300 dark:shadow-none border-b border-transparent dark:border-neutral-800 sticky top-2 md:w-[95%] mx-auto h-18 flex justify-between items-center transition-colors duration-200">
             <div className="flex items-center h-full justify-self-start md:w-[50%]" >
-                <nav className="flex items-center gap-8 justify-between w-[60%]  text-gray-700">
+                <nav className="flex items-center gap-8 justify-between w-[60%] text-gray-700 dark:text-neutral-300">
                     {
                         navItems.map((item) => (
-                            <Link className={`${item.label=='Contact' || item.label=='Home'?'hidden md:flex':'flex'}
-                            border-b-2 border-r-2 border-gray-200 
-                             text-[16px] md:text-[20px] 
-                            hover:border-gray-400 transition-all duration-300 py-1 md:py-1.5 px-2 md:px-2.5 rounded-md
-                            `} key={item.label} href={item.href}>
+                            <Link className={`${item.label == 'Contact' || item.label == 'Home' ? 'hidden md:flex' : 'flex'}
+                    border-b-2 border-r-2 border-gray-200 dark:border-neutral-800
+                    text-[16px] md:text-[20px] 
+                    hover:border-gray-400 dark:hover:border-neutral-500 transition-all duration-300 py-1 md:py-1.5 px-2 md:px-2.5 rounded-md
+                    `} key={item.label} href={item.href}>
                                 {item.label}
                             </Link>
                         ))
@@ -33,14 +33,14 @@ export default function Header() {
                 </nav>
             </div>
             <div className="flex justify-between items-center gap-2 md:gap-6">
-                <div className="hidden  md:flex md:items-center md:gap-3">
-                    <input className="min-w-[30%] border border-gray-300 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
+                <div className="hidden md:flex md:items-center md:gap-3">
+                    <input className="min-w-[30%] border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
                     </input>
-                    <Search/>
-                    
+                    <Search className="text-gray-500 dark:text-neutral-400" />
                 </div>
                 <Button className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button>
             </div>
         </div>
+
     )
 }

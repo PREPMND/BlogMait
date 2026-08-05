@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "700"], // Required if it's not a variable font
+});
+
 export const metadata: Metadata = {
   title: "Blog",
   description: "Blog website",

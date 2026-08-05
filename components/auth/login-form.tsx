@@ -3,6 +3,7 @@ import { string } from "@preplabs/validator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useState } from "react";
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
@@ -14,7 +15,7 @@ type LoginFormValues = {
 };
 
 export default function LoginForm() {
-    const [errorLogin,seterrorLogin]=useS
+    const [errorLogin,seterrorLogin]=useState(false);
 
     const form = useForm<LoginFormValues>({
         defaultValues: {
@@ -29,6 +30,7 @@ export default function LoginForm() {
 
         if (!email.ok) {
             console.log(email.error);
+            
             return;
         }
 

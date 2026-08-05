@@ -57,7 +57,7 @@ export default function LoginForm() {
     };
 
     return (
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 *:text-[18px] grid grid-cols-1 place-content-center ">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 *:text-[18px] grid grid-cols-1 place-content-center mx-auto ">
             <div className="space-y-2 md:max-w-[70%]">
                 <Label htmlFor="email">Email</Label>
                 <Input

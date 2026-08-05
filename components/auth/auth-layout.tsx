@@ -9,7 +9,7 @@ export default function AuthLayout() {
     return (
         <div className="flex flex-col justify-center  items-center min-h-full min-w-full">
             <div className=" md:w-[40%] w-[50%] md:h-20 h-16 mt-10 md:text-3xl text-2xl font-medium flex items-center justify-center  rounded-md
-            dark:bg-neutral-800 bg-white">
+            dark:bg-neutral-800  ">
                 Welcome
             </div>
             <Tabs value={activeTab} onValueChange={setactiveTab} className="w-[70%] mt-4">

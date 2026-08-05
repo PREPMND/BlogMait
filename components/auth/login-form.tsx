@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { toast } from "@/components/ui/label";
+import { toast } from "@/components/ui/toast";
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),

@@ -69,7 +69,7 @@ export default function LoginForm() {
                 />
             </div>
             <div>{errorLogin && (
-                <div className="">
+                <div className="text-red-400 ">
                     {errorMessage}
                 </div>)}</div>
             <Button type="submit">

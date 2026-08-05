@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import LoadingAsset from '../public/LoadingAsset.jpg'
 export default function NotFound() {
     return (

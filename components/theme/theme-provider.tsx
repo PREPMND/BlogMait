@@ -16,7 +16,7 @@ export function ThemeProvider({
     return (
         <NextThemesProvider {...props}>
             <Header/>
-            <main className={cn("h-full ",containerClassName)}>
+            <main className={cn("min-h-full mx-auto",containerClassName)}>
                 {children}
             </main>
             <Footer/>

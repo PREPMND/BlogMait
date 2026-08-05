@@ -3,7 +3,7 @@ import {z} from "zod";
 
 const LoginSchema=({
     email:string().min(5).max(30).contains("@").contains("."),
-    password:string;
+    password:string().psw(),
 })
 export default function LoginForm(){
     return (

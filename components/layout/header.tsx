@@ -9,7 +9,7 @@ export default function Header()
             label:'Home' , href:"/" 
         },
         {
-            label:'Create Post' , href:"/" 
+            label:'Create Post' , href:"/post/create" 
         },
         {
             label:'Contact' , href:"/contact"

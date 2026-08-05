@@ -2,7 +2,7 @@ import { string ,} from "@preplabs/validator";
 import {z} from "zod";
 
 const LoginSchema=({
-    email:string().;
+    email:string().min(5);
     password:string;
 })
 export default function LoginForm(){

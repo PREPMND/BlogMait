@@ -40,7 +40,7 @@ export default function Header() {
                     <Search className="hidden md:flex text-gray-500 dark:text-neutral-400" />
                 </div>
                 <Button 
-                
+                onClick={() => router.push('/auth')}
                 className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button>
             </div>
         </div>

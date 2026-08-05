@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono ,Playfair_Display} from "next/font/google";
+import { Geist, Geist_Mono ,Playfair_Display, Quicksand} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 
@@ -18,7 +18,17 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   weight: ["400", "700"], // Required if it's not a variable font
 });
+const poppins = Poppins({
+  variable: "--font-poppins",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
+// Configure Quicksand (Sleek Rounded Terminals)
+const quicksand = Quicksand({
+  variable: "--font-quicksand",
+  subsets: ["latin"],
+});
 export const metadata: Metadata = {
   title: "Blog",
   description: "Blog website",

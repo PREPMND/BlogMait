@@ -14,7 +14,7 @@ type LoginFormValues = {
 };
 
 export default function LoginForm() {
-    const [errorLogin,set]
+    const [errorLogin,seterrorLogin]=useS
 
     const form = useForm<LoginFormValues>({
         defaultValues: {

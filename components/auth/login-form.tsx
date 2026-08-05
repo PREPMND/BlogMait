@@ -1,5 +1,6 @@
 import { string ,} from "@preplabs/validator";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import {z} from "zod";
 
 const LoginSchema=({
@@ -12,7 +13,7 @@ type LoginFormValues=z.infer<typeof LoginSchema>
 export default function LoginForm(){
     const [loading ,setIsLoading]=useState(false);
 
-    const form=
+    const form=useForm
     return (
         <div>
             

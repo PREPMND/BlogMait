@@ -1,1 +1,3 @@
-function NotFound() {}
+function NotFound() {
+    return (
+}

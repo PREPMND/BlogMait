@@ -6,13 +6,13 @@ export default function Header()
 {
     const navItems=[
         {
-
+            label:Home 
         },
         {
 
         },
         {
-            
+
         }
     ]
 

@@ -1,8 +1,8 @@
-function CreatePpst(){
+export default function CreatePost(){
     return (
         <>
         <div>
-            
+
         </div>
         </>
     )

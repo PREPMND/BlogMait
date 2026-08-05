@@ -1,6 +1,6 @@
 export function Footer(){
     return (
-        <div className=" sticky bottom-0">
+        <div className="mt-10">
             Footer
         </div>
     )

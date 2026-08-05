@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { string } from "@preplabs/validator";
-import {Form} fro
+import {Form} from ""
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),

@@ -1,15 +1,14 @@
 import Link from "next/link"
-export default function Header()
-{
-    const navItems=[
+export default function Header() {
+    const navItems = [
         {
-            label:'Home' , href:"/" 
+            label: 'Home', href: "/"
         },
         {
-            label:'Create' , href:"/post/create" 
+            label: 'Create', href: "/post/create"
         },
         {
-            label:'Contact' , href:"/contact"
+            label: 'Contact', href: "/contact"
         }
     ]
 
@@ -17,15 +16,15 @@ export default function Header()
     return (
         <div className="w-full sticky top-1 md:w-[90%] mx-auto h-16 flex justify-center items-center">
             <div className="flex items-center justify-evenly w-full gap-6" >
-            <nav className="flex gap-6 ">
-                {
-                    navItems.map((item)=>(
-                        <Link key={item.label} href={item.href}>
-                            {item.label}
-                        </Link>
-                    ))
-                }
-            </nav>
+                <nav className="flex ">
+                    {
+                        navItems.map((item) => (
+                            <Link key={item.label} href={item.href}>
+                                {item.label}
+                            </Link>
+                        ))
+                    }
+                </nav>
             </div>
         </div>
     )

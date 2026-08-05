@@ -12,7 +12,7 @@ export default function AuthLayout() {
             dark:bg-neutral-800  ">
                 Welcome
             </div>
-            <Tabs value={activeTab} onValueChange={setactiveTab} className="w-[70%] mt-4">
+            <Tabs value={activeTab} onValueChange={setactiveTab} className="w-[70%] text-[18px] mt-4">
                 <TabsList className="w-full">
                     <TabsTrigger value="login">Login</TabsTrigger>
                     <TabsTrigger value="register">Register</TabsTrigger>

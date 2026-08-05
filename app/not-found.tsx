@@ -15,6 +15,7 @@ export default function NotFound() {
                 width={300} 
                 height={300}
                 priority
+                className="rounded-lg shadow-lg"
             />
         </div>
     )

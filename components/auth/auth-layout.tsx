@@ -1,6 +1,6 @@
 'use-client'
 
-import { Tabs ,Tabs, TabsList,TabsContent} from "@base-ui/react"
+import { Tabs , TabsList,TabsContent} from "@base-ui/react"
 import { useState } from "react"
 
 export default function AuthLayout() {

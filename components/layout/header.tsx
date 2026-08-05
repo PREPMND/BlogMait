@@ -32,6 +32,8 @@ export default function Header() {
             </div>
             <div className="flex justify-center items-center gap-2 md:gap-4">
                 <div className="hidden md:block">
+                    <input classN>
+                    </input>
                     <Search/>
                     
                 </div>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import PostDetail from "./post/[slug]/page";
 
 export default function Home() {

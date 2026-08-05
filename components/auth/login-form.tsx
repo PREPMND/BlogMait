@@ -44,7 +44,7 @@ export default function LoginForm() {
         }
 
         console.log("Valid Data:", data);
-        toast
+        toast.success("Login Succesfull")
         seterrorLogin(false);
         setErorrMesssage("");
     };

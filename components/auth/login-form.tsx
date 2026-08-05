@@ -31,7 +31,7 @@ export default function LoginForm() {
         if (!email.ok) {
             console.log(email.error);
             seterrorLogin(true);
-            setErorrMesssage()
+            setErorrMesssage(email.error)
             return;
         }
 

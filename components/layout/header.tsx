@@ -16,7 +16,7 @@ export default function Header() {
 
 
     return (
-        <div className="w-full sticky top-2  md:w-[95%] mx-auto h-18 flex  items-center">
+        <div className="w-full sticky top-2  md:w-[95%] mx-auto h-18 flex justify-between items-center">
             <div className="flex items-center h-full gap-6 md:w-[67%]" >
                 <nav className="flex justify-evenly items-center gap-4 w-full text-gray-700">
                     {

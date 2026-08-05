@@ -5,3 +5,10 @@ interface containerProps{
     className?:string;
 }
 export default function Container({children,className}: containerProps)
+{
+    return (
+        <div>
+            
+        </div>
+    )
+}

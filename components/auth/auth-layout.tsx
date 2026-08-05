@@ -2,7 +2,7 @@
 export default function AuthLayout(){
     return(
         <div>
-            <div className="border-b-1 border-r-1 border-">
+            <div className="border-b-1 border-r-1 border-neutral-400 ">
                 Welcome
             </div>
         </div>

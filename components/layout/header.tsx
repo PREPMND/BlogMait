@@ -30,7 +30,7 @@ export default function Header() {
                     }
                 </nav>
             </div>
-            <div className="flex justify-center items-center gap-2 md:gap-4">
+            <div className="flex justify-between items-center gap-2 md:gap-4">
                 <div className="hidden  md:flex md:items-center md:gap-3">
                     <input className="min-w-[30%] border border-gray-300 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
                     </input>

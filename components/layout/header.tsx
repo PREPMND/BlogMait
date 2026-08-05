@@ -7,6 +7,8 @@ export default function Header()
             <div className="flex items-center gap-6" >
             <Link href="/" > Go to HomePage </Link>
             <nav className="flex gap-6">
+                
+            </nav>
             </div>
         </div>
     )

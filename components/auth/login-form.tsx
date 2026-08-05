@@ -72,7 +72,7 @@ export default function LoginForm() {
                 <div className="text-red-400 text-[14px]">
                     {errorMessage}
                 </div>)}</div>
-            <Button className={`w-[110px]`} type="submit">
+            <Button className={`w-[110px] mx-auto`} type="submit">
                 Login
             </Button>
         </form>

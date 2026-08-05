@@ -10,7 +10,8 @@ const LoginSchema=({
 type LoginFormValues=z.infer<typeof LoginSchema>
 
 export default function LoginForm(){
-    const [loading ,setIsLoading]=useState)
+    const [loading ,setIsLoading]=useState(false);
+    
     return (
         <div>
             

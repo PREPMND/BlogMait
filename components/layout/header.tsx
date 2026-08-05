@@ -15,4 +15,4 @@ export default function Container({children,className}: containerProps)
         </div>
     )
 }
-//so cn("")
+//so cn("",className) ensure all the manually added and 

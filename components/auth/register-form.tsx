@@ -91,7 +91,7 @@ export default function RegisterForm() {
             setTimeout(() => {
                 setSuccess(false);
             }, 2500);
-
+            
         } catch (err) {
             console.log(err);
             
@@ -99,7 +99,7 @@ export default function RegisterForm() {
             setErorrMesssage("Network error. Could not reach server.");
         } finally {
             setLoading(false);
-            router.push('/')
+            
         }
     };
 

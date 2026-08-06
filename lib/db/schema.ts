@@ -1,1 +1,1 @@
-import {} from 'driz'
+import {} from 'drizzle-orm/pg-core'

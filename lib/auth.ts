@@ -8,6 +8,7 @@ export const auth=betterAuth({
         requireEmailVerification:false,
         autoSignIn:true,
         minPasswordLength:8,
+        maxPasswordLength:30,
     },
     baseURL:process.env.BASE_URL
 })

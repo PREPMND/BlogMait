@@ -12,6 +12,7 @@
 @theme {
   /* This creates the xs utility breakpoint at 480px */
   --breakpoint-xs: 520px;
+  --b
 }
 
 

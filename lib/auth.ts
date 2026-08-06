@@ -18,6 +18,9 @@ export const auth=betterAuth({
             maxAge:60*60*2
         },
         disableSessionRefresh:true
-    }
+    },
+    advanced:
+    {}
+    ,
     baseURL:process.env.BASE_URL
 })

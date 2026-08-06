@@ -5,86 +5,111 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { signUp } from "@/lib/auth-client";
+
 const RegisterSchema = {
-    username:string().min(4).max(20),
+    username: string().min(4).max(20),
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
-    confirmPassword : search(),
+    confirmPassword: search(),
 };
 
 type RegisterFormValues = {
     email: string;
     password: string;
-    confirmPassword:string;
-    username:string;
+    confirmPassword: string;
+    username: string;
 };
 
 export default function RegisterForm() {
     const [errorRegister, seterrorRegister] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false); // Track server loading state
+
     const form = useForm<RegisterFormValues>({
         defaultValues: {
             email: "",
             password: "",
-            confirmPassword:"",
-            username:"",
+            confirmPassword: "",
+            username: "",
         },
     });
-    
-    const onSubmit =async (data: RegisterFormValues) => {
-        const {error}=await signUp.email({
-            name:data.username,
-            email:data.email,
-            password:data.password
-        })
-        console.log(error);
-        const username =RegisterSchema.username.safeCheck(data.username);
-        const email = RegisterSchema.email.safeCheck(data.email);
-        const password = RegisterSchema.password.safeCheck(data.password);
-        const confirmPassword =RegisterSchema.confirmPassword.exact(data.password);
-        console.log(confirmPassword);
-        if (!email.ok) {
-            console.log(email.error);
-            seterrorRegister(true);
-            setErorrMesssage(email.error);
-            setSuccess(false);
-            return;
-        }
 
-        if (!password.ok) {
-            console.log(password.error);
-            seterrorRegister(true);
-            setErorrMesssage(password.error);
-            setSuccess(false);
-            return;
-        }
-        
-        if(data.password!==data.confirmPassword){
-            seterrorRegister(true);
-            setErorrMesssage("Passwords are not matching");
-            setSuccess(false);
-        }
-
-        console.log("Valid Data:", data);
-        setSuccess(true);
-
-        setTimeout(() => {
-            setSuccess(false);
-        }, 2500);
+    const onSubmit = async (data: RegisterFormValues) => {
+        // Reset message alerts on every click
         seterrorRegister(false);
         setErorrMesssage("");
+        setSuccess(false);
+
+        // 1. Client-Side Input Valdation Checks
+        const usernameCheck = RegisterSchema.username.safeCheck(data.username);
+        const emailCheck = RegisterSchema.email.safeCheck(data.email);
+        const passwordCheck = RegisterSchema.password.safeCheck(data.password);
+
+        if (!usernameCheck.ok) {
+            seterrorRegister(true);
+            setErorrMesssage(usernameCheck.error);
+            return;
+        }
+
+        if (!emailCheck.ok) {
+            seterrorRegister(true);
+            setErorrMesssage(emailCheck.error);
+            return;
+        }
+
+        if (!passwordCheck.ok) {
+            seterrorRegister(true);
+            setErorrMesssage(passwordCheck.error);
+            return;
+        }
+
+        if (data.password !== data.confirmPassword) {
+            seterrorRegister(true);
+            setErorrMesssage("Passwords are not matching");
+            return; // Added return to prevent continuing on mismatch
+        }
+
+        // 2. Submit to Database via Better-Auth
+        try {
+            setLoading(true);
+            const { error } = await signUp.email({
+                name: data.username,
+                email: data.email,
+                password: data.password
+            });
+
+            if (error) {
+                seterrorRegister(true);
+                setErorrMesssage(error.message || "An authentication error occurred.");
+                return;
+            }
+
+            // Success Execution Pipeline
+            console.log("Valid Data:", data);
+            setSuccess(true);
+
+            setTimeout(() => {
+                setSuccess(false);
+            }, 2500);
+
+        } catch (err) {
+            seterrorRegister(true);
+            setErorrMesssage("Network error. Could not reach server.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3 *:text-[18px] flex flex-col justify-center items-center">
             <div className="space-y-1 w-full md:max-w-[70%]">
-                <Label htmlFor="email"><span>   </span>Username</Label>
+                <Label htmlFor="username"><span>   </span>Username</Label>
                 <Input
                     className="min-h-[38px] "
                     id="username"
                     type="text"
-                    placeholder="Enter your email"
+                    placeholder="Enter your username" // Fixed placeholder description context
                     {...form.register("username")}
                 />
             </div>
@@ -110,12 +135,12 @@ export default function RegisterForm() {
                 />
             </div>
             <div className="space-y-2 w-full md:max-w-[70%]">
-                <Label htmlFor="email"><span>   </span>Confirm Password</Label>
+                <Label htmlFor="confirm-password"><span>   </span>Confirm Password</Label>
                 <Input
                     className="min-h-[38px] "
                     id="confirm-password"
-                    type="text"
-                    placeholder="Enter your email"
+                    type="password" // Swapped from text to password for security masking
+                    placeholder="Confirm your password" // Fixed placeholder description context
                     {...form.register("confirmPassword")}
                 />
             </div>
@@ -128,12 +153,16 @@ export default function RegisterForm() {
                 {success && (
                     <div className="flex items-center gap-1 w-[250px] rounded-md bg-green-100 px-[10px] py-2 mx-auto justify-center text-green-700">
                         <span>✅</span>
-                        <span className="flex gap-2">Registeration <span className="hidden md:flex">successful!</span></span>
+                        <span className="flex gap-2">Registration <span className="hidden md:flex">successful!</span></span>
                     </div>
                 )}
             </div>
-            <Button className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-indigo-200`} type="submit">
-                Register
+            <Button
+                disabled={loading} // Blocks double clicks during database traffic
+                className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-indigo-200`}
+                type="submit"
+            >
+                {loading ? "Saving..." : "Register"}
             </Button>
         </form>
     );

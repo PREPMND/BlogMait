@@ -73,8 +73,8 @@ export default function RegisterForm() {
                 <Label htmlFor="email"><span>   </span>Username</Label>
                 <Input
                     className="min-h-[38px] "
-                    id="email"
-                    type="email"
+                    id="username"
+                    type="text"
                     placeholder="Enter your email"
                     {...form.register("email")}
                 />

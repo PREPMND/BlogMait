@@ -26,7 +26,7 @@ export default function PostDetail(){
         <>
         <div>
             post detail
-            {Posts.map()}
+            {Posts.map((post)=>)}
         </div>
         </>
     )

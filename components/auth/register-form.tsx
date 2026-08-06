@@ -85,7 +85,6 @@ export default function RegisterForm() {
                 return;
             }
 
-            // Success Execution Pipeline
             console.log("Valid Data:", data);
             setSuccess(true);
 
@@ -158,7 +157,7 @@ export default function RegisterForm() {
                 )}
             </div>
             <Button
-                disabled={loading} // Blocks double clicks during database traffic
+                disabled={loading} 
                 className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-indigo-200`}
                 type="submit"
             >

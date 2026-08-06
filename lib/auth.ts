@@ -16,7 +16,8 @@ export const auth=betterAuth({
         cookieCache:{
             enabled:true,
             maxAge:60*60*2
-        }
+        },
+        disableSessionRefresh:true
     }
     baseURL:process.env.BASE_URL
 })

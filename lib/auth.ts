@@ -6,5 +6,5 @@ export const auth=betterAuth({
     emailAndPassword:{
         enabled:true,
     },
-    baseURL:process.env
+    baseURL:process.env.BASE_URL
 })

@@ -24,6 +24,7 @@ export const accounts = pgTable('accounts', {
     id: varchar('id', { length: 255 }).primaryKey(),
     userId: varchar('user_id', { length: 255 }).references(() => users.id).notNull(),
     accountId :varchar('account_id', { length: 255 }).notNull(),
+    providerId:varchar('name', { length: 255 }).notNull(),
 
     expiresAt: timestamp("expires_at").notNull(),
     ipAddess:varchar('ip_address',{length:255}),

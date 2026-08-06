@@ -33,11 +33,12 @@ export default function RegisterForm() {
     });
     
     const onSubmit =async (data: RegisterFormValues) => {
-        const {data,error}=await signUp.email({
+        const {error}=await signUp.email({
             name:data.username,
             email:data.email,
             password:data.password
         })
+        console.log(error);
         const username =RegisterSchema.username.safeCheck(data.username);
         const email = RegisterSchema.email.safeCheck(data.email);
         const password = RegisterSchema.password.safeCheck(data.password);

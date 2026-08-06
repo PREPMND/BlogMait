@@ -1,3 +1,3 @@
 
 import {auth} from "@lib/auth"
-import {toNextJsHandler} from "@be"
+import {toNextJsHandler} from "better-auth/next"

@@ -1,3 +1,3 @@
-export default auth={
+export default auth=({
 
-}
+})

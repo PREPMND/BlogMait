@@ -109,7 +109,7 @@ export default function RegisterForm() {
                     className="min-h-[38px] "
                     id="username"
                     type="text"
-                    placeholder="Enter your username" // Fixed placeholder description context
+                    placeholder="Enter your username"
                     {...form.register("username")}
                 />
             </div>
@@ -139,8 +139,8 @@ export default function RegisterForm() {
                 <Input
                     className="min-h-[38px] "
                     id="confirm-password"
-                    type="password" // Swapped from text to password for security masking
-                    placeholder="Confirm your password" // Fixed placeholder description context
+                    type="password" 
+                    placeholder="Confirm your password"
                     {...form.register("confirmPassword")}
                 />
             </div>

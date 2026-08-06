@@ -24,7 +24,7 @@ export default function RegisterForm() {
     const [errorRegister, seterrorRegister] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
-    const [loading, setLoading] = useState(false); // Track server loading state
+    const [loading, setLoading] = useState(false); 
 
     const form = useForm<RegisterFormValues>({
         defaultValues: {

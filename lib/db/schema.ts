@@ -1,1 +1,1 @@
-import {pg} from 'drizzle-orm/pg-core'
+import {pgTable} from 'drizzle-orm/pg-core'

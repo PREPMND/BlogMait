@@ -10,7 +10,10 @@ export default function PostDetail(){
         title:'hey',description:'hey',slug:'hey',id:1
         },
         {
-            
+            title:'hey',description:'hey',slug:'hey',id:2
+        },
+        {
+            title:'hey',description:'hey',slug:'hey',id:1
         }
         ]
     return(

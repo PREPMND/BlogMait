@@ -72,9 +72,8 @@ export default function LoginForm() {
             console.log("Valid Data:", data);
             setSuccess(true);
 
-            // Execute client-side redirection wrapper target
             router.push('/');
-            router.refresh(); // Refresh route context tree to load fresh cookie states
+            router.refresh();
 
         } catch (err) {
             console.log(err);

@@ -37,7 +37,7 @@ export const posts = pgTable('posts',{
     slug:varchar('slug', { length: 255 }).notNull().unique(),
     authorId:varchar('authour_id', { length: 255 }).references(() => users.id).notNull(),
     isPublished:boolean('is_published'),
-    isDraft:boolean('is_published'),
+    isDraft:boolean('is_draft'),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

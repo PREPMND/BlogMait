@@ -5,7 +5,10 @@ export const auth=betterAuth({
     appName:"Blog Next",
     secret:process.env.BETTER_AUTH_SECRET || '',
     database:drizzleAdapter(db,{
-        provider:
+        provider:'pg',
+        schema:{
+            
+        }
     }),
     emailAndPassword:{
         enabled:true,

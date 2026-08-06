@@ -98,7 +98,7 @@ export default function RegisterForm() {
             setErorrMesssage("Network error. Could not reach server.");
         } finally {
             setLoading(false);
-            route
+            route.pusg
         }
     };
 

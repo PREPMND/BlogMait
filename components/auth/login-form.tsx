@@ -92,7 +92,7 @@ export default function LoginForm() {
                     </div>
                 )}
             </div>
-            <Button className={`w-[110px] mx-auto`} type="submit">
+            <Button className={`w-[110px] mx-auto py-4`} type="submit">
                 Login
             </Button>
         </form>

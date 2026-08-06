@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
+    "@better-auth/cli": "^1.4.21",
     "@hookform/resolvers": "^5.7.1",
     "@preplabs/validator": "^1.0.0",
     "add": "^2.0.9",

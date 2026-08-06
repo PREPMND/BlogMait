@@ -11,7 +11,7 @@ export const users = pgTable('users',{
 
 export const sessions = pgTable('sessions',{
     id:varchar('id',{length:255}).primaryKey(),
-    userId:varchar
+    userId:varchar('user_id',{})
     name:varchar('name',{length:255}).notNull(),
     email:varchar('email',{length:255}).notNull().unique(),
     emailVerified:boolean("email_verfiied").default(false),

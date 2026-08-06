@@ -72,7 +72,7 @@ export default function RegisterForm() {
 
     return (
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 *:text-[18px] flex flex-col justify-center items-center">
-            <div className="space-y-2 w-full md:max-w-[70%]">
+            <div className="space-y-1 w-full md:max-w-[70%]">
                 <Label htmlFor="email"><span>   </span>Username</Label>
                 <Input
                     className="min-h-[38px] "

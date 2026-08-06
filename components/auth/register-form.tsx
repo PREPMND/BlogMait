@@ -52,7 +52,8 @@ export default function RegisterForm() {
         }
         
         if(data.password!==data.confirmPassword){
-            
+            seterrorRegister(true);
+            set
         }
 
         console.log("Valid Data:", data);

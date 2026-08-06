@@ -1,5 +1,4 @@
 import {pgTable,varchar,boolean} from 'drizzle-orm/pg-core'
-import {  } from 'zod'
 
 export const users = pgTable('users',{
     id:varchar('id',{length:255}).primaryKey(),

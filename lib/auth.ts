@@ -1,5 +1,5 @@
 import { betterAuth } from "better-auth";
-import {} from "auth"
+import {} from "better-auth/adapters/d"
 export const auth=betterAuth({
     appName:"Blog Next",
     secret:process.env.BETTER_AUTH_SECRET || '',

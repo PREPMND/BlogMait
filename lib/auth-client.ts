@@ -1,1 +1,1 @@
-import { } from "betterauth"
+import { Create } from "betterauth/react"

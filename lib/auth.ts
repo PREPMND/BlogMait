@@ -1,1 +1,1 @@
-export defa
+export default function Auth(){}

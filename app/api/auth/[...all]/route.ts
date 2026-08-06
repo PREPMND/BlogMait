@@ -1,1 +1,1 @@
-import {auth}
+import {} from "nextjs"

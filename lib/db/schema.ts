@@ -1,5 +1,5 @@
-import { relations } from 'drizzle-orm'
-import { pgTable, varchar, boolean, timestamp,text, serial} from 'drizzle-orm/pg-core'
+import { relations ,one } from 'drizzle-orm'
+import { pgTable, varchar, boolean, timestamp,text, serial } from 'drizzle-orm/pg-core'
 
 export const users = pgTable('users', {
     id: varchar('id', { length: 255 }).primaryKey(),

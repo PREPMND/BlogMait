@@ -7,13 +7,7 @@ export const auth=betterAuth({
     secret:process.env.BETTER_AUTH_SECRET || '',
     database:drizzleAdapter(db,{
         provider:'pg',
-        schema:{
-            ...schema,
-            user:schema.users,
-            session:schema.sessions,
-            account:schema.accounts,
-            
-        }
+        schema:schema
     }),
     emailAndPassword:{
         enabled:true,

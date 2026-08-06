@@ -1,5 +1,5 @@
 import { betterAuth } from "better-auth";
-
+import {dizad}
 export const auth=betterAuth({
     appName:"Blog Next",
     secret:process.env.BETTER_AUTH_SECRET || '',

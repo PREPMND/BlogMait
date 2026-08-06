@@ -24,7 +24,7 @@ export default function Header() {
                     {
                         navItems.map((item) => (
                             <Link className={`${item.label == 'Contact' || item.label == 'Home' ? 'hidden md:flex' : 'flex'}
-                    border-b-2 border-r-2 ho border-gray-200 dark:border-neutral-800
+                    border-b-2 border-r-2 hover:scale-[1.02] border-gray-200 dark:border-neutral-800
                     text-[16px] md:text-[20px] 
                     hover:border-gray-400 dark:hover:border-neutral-500 transition-all duration-300 py-1 md:py-1.5 px-2 md:px-2.5 rounded-md
                     `} key={item.label} href={item.href}>

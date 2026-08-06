@@ -97,7 +97,7 @@ export default function RegisterForm() {
                 {success && (
                     <div className="flex items-center gap-1 w-[250px] rounded-md bg-green-100 px-[10px] py-2 mx-auto justify-center text-green-700">
                         <span>✅</span>
-                        <span className="flex gap-2">Register <span className="hidden md:flex">successful!</span></span>
+                        <span className="flex gap-2">Registeration <span className="hidden md:flex">successful!</span></span>
                     </div>
                 )}
             </div>

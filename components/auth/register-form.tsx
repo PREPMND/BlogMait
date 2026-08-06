@@ -26,7 +26,7 @@ export default function RegisterForm() {
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
     const [loading, setLoading] = useState(false); 
-    const router=useRouter
+    const router=useRouter()
     const form = useForm<RegisterFormValues>({
         defaultValues: {
             email: "",

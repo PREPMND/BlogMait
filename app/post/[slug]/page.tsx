@@ -6,7 +6,7 @@ import { id } from "zod/v4/locales";
 
 export default function PostDetail(){
     const Posts=[{
-        title:'hey',description:'hey',slug:'hey',id=
+        title:'hey',description:'hey',slug:'hey',id={1}
     }]
     return(
         <>

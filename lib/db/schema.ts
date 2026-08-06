@@ -1,5 +1,6 @@
 import { isNotNull } from 'drizzle-orm'
 import { primaryKey } from 'drizzle-orm/gel-core'
+import { varchar } from 'drizzle-orm/mysql-core'
 import {pgTable} from 'drizzle-orm/pg-core'
 
 export const users = pgTable('users',{

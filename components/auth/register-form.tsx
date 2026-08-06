@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 const RegisterSchema = {
-    username:string().min(4).max(20).
+    username:string().user()
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
     confirmPassword : search(),

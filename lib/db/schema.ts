@@ -9,7 +9,7 @@ export const users = pgTable('users',{
     updatedAt:timestamp("updated_at").defaultNow().notNull(),
 })
 
-export const sessions = pgTable('users',{
+export const sessions = pgTable('sessions',{
     id:varchar('id',{length:255}).primaryKey(),
     name:varchar('name',{length:255}).notNull(),
     email:varchar('email',{length:255}).notNull().unique(),

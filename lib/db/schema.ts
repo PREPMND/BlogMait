@@ -21,7 +21,7 @@ export const sessions = pgTable('sessions', {
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
 
-export const  = pgTable('sessions', {
+export const accounts = pgTable('accounts', {
     id: varchar('id', { length: 255 }).primaryKey(),
     userId: varchar('user_id', { length: 255 }).references(() => users.id).notNull(),
     token:varchar('token',{length:255}),

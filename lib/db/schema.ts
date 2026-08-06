@@ -8,3 +8,12 @@ export const users = pgTable('users',{
     createdAt:timestamp("created_at").defaultNow().notNull(),
     updatedAt:timestamp("updated_at").defaultNow().notNull(),
 })
+
+export const sessions = pgTable('users',{
+    id:varchar('id',{length:255}).primaryKey(),
+    name:varchar('name',{length:255}).notNull(),
+    email:varchar('email',{length:255}).notNull().unique(),
+    emailVerified:boolean("email_verfiied").default(false),
+    createdAt:timestamp("created_at").defaultNow().notNull(),
+    updatedAt:timestamp("updated_at").defaultNow().notNull(),
+})

@@ -35,6 +35,7 @@ export default function RegisterForm() {
         const email = RegisterSchema.email.safeCheck(data.email);
         const password = RegisterSchema.password.safeCheck(data.password);
         const confirmPassword =RegisterSchema.confirmPassword.exact(data.password);
+        console.log(confirmPassword);
         if (!email.ok) {
             console.log(email.error);
             seterrorRegister(true);

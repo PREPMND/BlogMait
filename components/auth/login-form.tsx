@@ -37,7 +37,6 @@ export default function LoginForm() {
         setErorrMesssage("");
         setSuccess(false);
 
-        // 1. Client-Side Parsing Gating Checks
         const emailCheck = LoginSchema.email.safeCheck(data.email);
         const passwordCheck = LoginSchema.password.safeCheck(data.password);
 
@@ -55,7 +54,7 @@ export default function LoginForm() {
             return;
         }
 
-        // 2. Authenticate Session via Better-Auth Server API Pipeline
+        
         try {
             setLoading(true);
             const { error } = await signIn.email({

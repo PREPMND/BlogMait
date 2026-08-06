@@ -1,1 +1,1 @@
-import {} from "@lib"
+import {auth} from "@lib/auth"

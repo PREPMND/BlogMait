@@ -12,7 +12,7 @@ export const auth=betterAuth({
     },
     session:{
         expiresIn:60*60*24*7,
-        updateAge:
+        updateAge:60*60*24,
     }
     baseURL:process.env.BASE_URL
 })

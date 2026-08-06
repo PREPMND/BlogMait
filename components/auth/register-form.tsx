@@ -34,7 +34,8 @@ export default function RegisterForm() {
     
     const onSubmit = (data: RegisterFormValues) => {
         const {}=await signUp.email({
-            name:data
+            name:data.username,
+            
         })
         const username =RegisterSchema.username.safeCheck(data.username);
         const email = RegisterSchema.email.safeCheck(data.email);

@@ -7,7 +7,7 @@ export const auth=betterAuth({
         enabled:true,
         requireEmailVerification:false,
         autoSignIn:true,
-        minPasswordLength
+        minPasswordLength:6,
     },
     baseURL:process.env.BASE_URL
 })

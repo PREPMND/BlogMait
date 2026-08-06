@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { string } from "@preplabs/validator";
+import { search, string } from "@preplabs/validator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -7,7 +7,7 @@ import { useState } from "react";
 const RegisterSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
-    confirmPassword : string().min(8).max(30),
+    confirmPassword : search().exact()
 };
 
 type RegisterFormValues = {

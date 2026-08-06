@@ -1,3 +1,3 @@
 
 import {auth} from "@lib/auth"
-import {toNextJsHan}
+import {toNextJsHandler} from "@be"

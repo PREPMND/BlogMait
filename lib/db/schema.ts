@@ -1,3 +1,4 @@
+import { timestamp } from 'drizzle-orm/gel-core'
 import {pgTable,varchar,boolean} from 'drizzle-orm/pg-core'
 
 export const users = pgTable('users',{
@@ -5,5 +6,5 @@ export const users = pgTable('users',{
     name:varchar('name',{length:255}).notNull(),
     email:varchar('email',{length:255}).notNull().unique(),
     emailVerified:boolean("email_verfiied").default(false),
-    createAr:
+    createAt:timestamp
 })

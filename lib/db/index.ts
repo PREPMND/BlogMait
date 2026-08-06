@@ -11,4 +11,5 @@ const pool = new Pool({
     max:10
 });
 
-export const db =
+export const db =drizzle(pool,{schema});
+

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-const LoginSchema = {
+const RegisterSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
 };
@@ -15,7 +15,7 @@ type RegisterFormValues = {
 };
 
 export default function RegisterForm() {
-    const [errorLogin, seterrorLogin] = useState(false);
+    const [errorRegister, seterrorRegister] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
 
@@ -27,12 +27,12 @@ export default function RegisterForm() {
     });
 
     const onSubmit = (data: RegisterFormValues) => {
-        const email = LoginSchema.email.safeCheck(data.email);
-        const password = LoginSchema.password.safeCheck(data.password);
+        const email = RegisterSchema.email.safeCheck(data.email);
+        const password = RegisterSchema.password.safeCheck(data.password);
 
         if (!email.ok) {
             console.log(email.error);
-            seterrorLogin(true);
+            seterrorRegister(true);
             setErorrMesssage(email.error);
             setSuccess(false);
             return;
@@ -40,7 +40,7 @@ export default function RegisterForm() {
 
         if (!password.ok) {
             console.log(password.error);
-            seterrorLogin(true);
+            seterrorRegister(true);
             setErorrMesssage(password.error);
             setSuccess(false);
             return;
@@ -52,7 +52,7 @@ export default function RegisterForm() {
         setTimeout(() => {
             setSuccess(false);
         }, 2500);
-        seterrorLogin(false);
+        seterrorRegister(false);
         setErorrMesssage("");
     };
 
@@ -79,7 +79,7 @@ export default function RegisterForm() {
                     {...form.register("password")}
                 />
             </div>
-            <div>{errorLogin && (
+            <div>{errorRegister && (
                 <div className="text-red-400 text-[14px]">
                     {errorMessage}
                 </div>)}
@@ -88,12 +88,12 @@ export default function RegisterForm() {
                 {success && (
                     <div className="flex items-center gap-1 w-[250px] rounded-md bg-green-100 px-[10px] py-2 mx-auto justify-center text-green-700">
                         <span>✅</span>
-                        <span className="flex gap-2">Login <span className="hidden md:flex">successful!</span></span>
+                        <span className="flex gap-2">Register <span className="hidden md:flex">successful!</span></span>
                     </div>
                 )}
             </div>
             <Button className={`w-[110px] mx-auto`} type="submit">
-                Login
+                Register
             </Button>
         </form>
     );

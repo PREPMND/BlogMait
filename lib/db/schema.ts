@@ -1,3 +1,4 @@
+import { relations } from 'drizzle-orm'
 import { pgTable, varchar, boolean, timestamp,text, serial} from 'drizzle-orm/pg-core'
 
 export const users = pgTable('users', {
@@ -42,4 +43,6 @@ export const posts = pgTable('posts',{
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
 
-const userRelations
+const userRelations=relations(posts,{
+    
+})

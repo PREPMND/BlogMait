@@ -50,8 +50,8 @@ export default function RegisterForm() {
             setSuccess(false);
             return;
         }
-
-        if(password!==confirmPassword)
+        
+        if(data.password!==confirmPassword)
 
         console.log("Valid Data:", data);
         setSuccess(true);

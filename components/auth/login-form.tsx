@@ -21,7 +21,7 @@ export default function LoginForm() {
     const [errorLogin, seterrorLogin] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
-    const [loading, setLoading] = useState(false)// Loading state tracking variable
+    const [loading, setLoading] = useState(false);// Loading state tracking variable
     const router = useRouter(); 
 
     const form = useForm<LoginFormValues>({

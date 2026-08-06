@@ -21,7 +21,7 @@ export const auth=betterAuth({
     },
     advanced:
     {
-        
+        useSecureCookies:process.env.
     }
     ,
     baseURL:process.env.BASE_URL

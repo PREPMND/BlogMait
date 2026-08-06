@@ -1,6 +1,7 @@
 import { betterAuth } from "better-auth";
 import {drizzleAdapter} from "better-auth/adapters/drizzle"
 import { db } from "./db/index";
+import { schema } from "./db/schema";
 export const auth=betterAuth({
     appName:"Blog Next",
     secret:process.env.BETTER_AUTH_SECRET || '',
@@ -8,7 +9,8 @@ export const auth=betterAuth({
         provider:'pg',
         schema:{
             ...schema,
-            user:schema.user
+            user:schema.user,
+            session:schema.
         }
     }),
     emailAndPassword:{

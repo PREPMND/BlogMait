@@ -10,7 +10,8 @@ export const auth=betterAuth({
         schema:{
             ...schema,
             user:schema.user,
-            session:schema.
+            session:schema.sessions,
+            
         }
     }),
     emailAndPassword:{

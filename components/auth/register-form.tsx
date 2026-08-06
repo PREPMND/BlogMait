@@ -50,8 +50,8 @@ export default function RegisterForm() {
             setSuccess(false);
             return;
         }
-        if(!confirmPassword.ok){
-            
+        if(!confirmPassword){
+
         }
         if(data.password!==data.confirmPassword)
 

@@ -2,7 +2,7 @@ import {Config} from "drizzle-kit";
 
 export default ({
     dialect:"postgresql",
-    schema:'./src/',
+    schema:'./lib/schema',
     out:"./drizzle",
     dbCredentials:{
         url:process.env.DATABASE_URL || '',

@@ -5,7 +5,7 @@ export default ({
     schema:'./lib/db/schema.ts',
     out:"./drizzle",
     dbCredentials:{
-        url:process.env.DATABASE_URL,
+        url:postgresql://postgresql:prep@localhost:5432/BlogNextts,
     },
     verbose:true,
     strict:true

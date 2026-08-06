@@ -20,7 +20,9 @@ export const auth=betterAuth({
         disableSessionRefresh:true
     },
     advanced:
-    {}
+    {
+        
+    }
     ,
     baseURL:process.env.BASE_URL
 })

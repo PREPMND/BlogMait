@@ -1,4 +1,4 @@
-import { pgTable, varchar, boolean, timestamp,userAgent } from 'drizzle-orm/pg-core'
+import { pgTable, varchar, boolean, timestamp,text} from 'drizzle-orm/pg-core'
 
 export const users = pgTable('users', {
     id: varchar('id', { length: 255 }).primaryKey(),

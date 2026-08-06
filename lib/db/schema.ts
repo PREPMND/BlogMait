@@ -73,5 +73,7 @@ export const sessionsRelations=relations(sessions,({one})=>({
 
 export const schema ={
     users,
-    acc
+    accounts,
+    sessions,
+    posts
 }

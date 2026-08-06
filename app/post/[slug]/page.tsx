@@ -1,4 +1,4 @@
-import BlogCard from "@/components/ui/card-tactical";
+import BlogCard from "@/components/ui/card-tactical1";
 
 export default function PostDetail(){
     return(

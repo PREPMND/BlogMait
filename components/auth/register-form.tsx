@@ -33,7 +33,7 @@ export default function RegisterForm() {
     const onSubmit = (data: RegisterFormValues) => {
         const email = RegisterSchema.email.safeCheck(data.email);
         const password = RegisterSchema.password.safeCheck(data.password);
-        const 
+        const confirmPassword =Regi
         if (!email.ok) {
             console.log(email.error);
             seterrorRegister(true);

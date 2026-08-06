@@ -30,7 +30,7 @@ export default function RegisterForm() {
             username:"",
         },
     });
-    const handleSumbit
+    const handleSumbitRegister= 
     const onSubmit = (data: RegisterFormValues) => {
         
         const username =RegisterSchema.username.safeCheck(data.username);

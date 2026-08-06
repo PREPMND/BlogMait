@@ -7,6 +7,7 @@ import { useState } from "react";
 const RegisterSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
+    
 };
 
 type RegisterFormValues = {

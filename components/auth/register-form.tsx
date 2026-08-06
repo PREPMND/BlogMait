@@ -54,7 +54,7 @@ export default function RegisterForm() {
         if(data.password!==data.confirmPassword){
             seterrorRegister(true);
             setErorrMesssage("Passwords are not matching");
-            setSuccess
+            setSuccess(false);
         }
 
         console.log("Valid Data:", data);

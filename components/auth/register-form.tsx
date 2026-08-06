@@ -26,6 +26,7 @@ export default function RegisterForm() {
             email: "",
             password: "",
             confirmPassword:"",
+            username:"",
         },
     });
 

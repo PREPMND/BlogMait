@@ -9,4 +9,6 @@ const pool = new Pool({
         rejectUnauthorized:false,
     }:false,
     max:10
-})
+});
+
+export const db =

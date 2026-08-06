@@ -1,3 +1,3 @@
 
 
-import auth form "@lib/"
+import auth from "@lib/auth"

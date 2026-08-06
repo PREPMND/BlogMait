@@ -3,6 +3,7 @@
 import { Tabs , TabsList ,TabsTrigger,TabsContent} from "@/components/ui/tabs"
 import { useState } from "react"
 import LoginForm from "./login-form"
+import RegisterForm from "./register-form"
 
 export default function AuthLayout() {
     const [activeTab, setactiveTab] = useState('login')
@@ -25,7 +26,7 @@ export default function AuthLayout() {
                 </TabsContent>
                 <TabsContent value="register">
                     <div className="p-4">
-                        Register Form
+                        <RegisterForm/>
                     </div>
                 </TabsContent>
             </Tabs>

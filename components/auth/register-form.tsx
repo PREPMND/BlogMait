@@ -14,7 +14,7 @@ type LoginFormValues = {
     password: string;
 };
 
-export default function LoginForm() {
+export default function RegisterForm() {
     const [errorLogin, seterrorLogin] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);

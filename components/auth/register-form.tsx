@@ -105,7 +105,7 @@ export default function RegisterForm() {
                 <Input
                     className="min-h-[38px] "
                     id="email"
-                    type="con"
+                    type="text"
                     placeholder="Enter your email"
                     {...form.register("email")}
                 />

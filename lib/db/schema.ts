@@ -59,7 +59,7 @@ export const postRelations=relations(posts,({one})=>({
 
 export const accountRelations=relations(accounts,({one})=>({
     user:one(users,{
-        fields:[posts.authorId],
-        references:[users.id]
+        fields:[accounts.authorId],
+        references:[accounts.id]
     })
 }))

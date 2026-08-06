@@ -1,1 +1,1 @@
-import {} from "nextjs"
+import {} from "@lib"

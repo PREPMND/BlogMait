@@ -14,7 +14,10 @@ export default function PostDetail(){
         },
         {
             title:'hey',description:'hey',slug:'hey',id:3
-        }
+        },
+        {
+            title:'hey',description:'hey',slug:'hey',id:4
+        },{}
         ]
     return(
         <>

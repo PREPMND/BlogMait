@@ -29,3 +29,5 @@ export const accounts = pgTable('accounts', {
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
+
+export const 

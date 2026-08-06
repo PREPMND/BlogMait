@@ -21,7 +21,7 @@ export const auth=betterAuth({
     },
     advanced:
     {
-        useSecureCookies:process.env.
+        useSecureCookies:process.env.NODE_ENV==='production'
     }
     ,
     baseURL:process.env.BASE_URL

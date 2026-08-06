@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { signIn } from "@/lib/auth-client"; // Imported Better-Auth sign-in helper
-import { useRouter } from "next/navigation"; // Correct hook for Next.js App Router
+import { useRouter } from "next/navigation"; 
 
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
@@ -21,7 +21,7 @@ export default function LoginForm() {
     const [errorLogin, seterrorLogin] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
-    const [loading, setLoading] = useState(false);// Loading state tracking variable
+    const [loading, setLoading] = useState(false);
     const router = useRouter(); 
 
     const form = useForm<LoginFormValues>({

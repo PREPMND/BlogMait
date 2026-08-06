@@ -72,8 +72,8 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                 .glowing-card {
                     animation: ambientGlow 4s ease-in-out infinite;
                 will-change: transform;
-       `}
-      }</style>
+       }
+      `}</style>
 
             <motion.div
                 ref={cardRef}

@@ -92,7 +92,7 @@ export default function RegisterForm() {
             }, 2500);
 
         } catch (err) {
-            console.log(err.message);
+            console.log(err);
             
             seterrorRegister(true);
             setErorrMesssage("Network error. Could not reach server.");

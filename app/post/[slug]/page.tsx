@@ -17,13 +17,16 @@ export default function PostDetail(){
         },
         {
             title:'hey',description:'hey',slug:'hey',id:4
-        },{}
+        },
+        {
+            title:'hey',description:'hey',slug:'hey',id:5
+        }
         ]
     return(
         <>
         <div>
             post detail
-            <Perfect3DTiltCard title="hey" description="hey" slug="yea" id={1}/>
+            
         </div>
         </>
     )

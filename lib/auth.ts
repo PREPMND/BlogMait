@@ -10,5 +10,8 @@ export const auth=betterAuth({
         minPasswordLength:8,
         maxPasswordLength:30,
     },
+    session:{
+        exp
+    }
     baseURL:process.env.BASE_URL
 })

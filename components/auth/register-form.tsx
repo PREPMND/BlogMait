@@ -110,7 +110,7 @@ export default function RegisterForm() {
                     id="confirm-password"
                     type="text"
                     placeholder="Enter your email"
-                    {...form.register("email")}
+                    {...form.register("confirmPassword")}
                 />
             </div>
             <div>{errorRegister && (

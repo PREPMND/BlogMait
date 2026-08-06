@@ -5,9 +5,11 @@ import { describe } from "zod/v4/core";
 import { id } from "zod/v4/locales";
 
 export default function PostDetail(){
-    const Posts=[{
+    const Posts=[
+        {
         title:'hey',description:'hey',slug:'hey',id={1}
-    }]
+        }
+        ]
     return(
         <>
         <div>

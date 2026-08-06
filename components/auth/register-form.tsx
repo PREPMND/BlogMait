@@ -7,7 +7,7 @@ import { useState } from "react";
 const RegisterSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
-    confirmPassword : search().exact()
+    confirmPassword : search(),
 };
 
 type RegisterFormValues = {
@@ -34,7 +34,7 @@ export default function RegisterForm() {
     const onSubmit = (data: RegisterFormValues) => {
         const email = RegisterSchema.email.safeCheck(data.email);
         const password = RegisterSchema.password.safeCheck(data.password);
-        const confirmPassword =RegisterSchema.confirmPassword.safeCheck(data.confirmPassword);
+        const confirmPassword =RegisterSchema.confirmPassword.safeChconfirmPassword);
         if (!email.ok) {
             console.log(email.error);
             seterrorRegister(true);

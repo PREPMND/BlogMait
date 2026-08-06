@@ -71,4 +71,7 @@ export const sessionsRelations=relations(sessions,({one})=>({
     })
 }))
 
-export const 
+export const schema ={
+    users,
+    acc
+}

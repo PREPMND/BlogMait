@@ -9,7 +9,7 @@ const LoginSchema = {
     password: string().min(8).max(30),
 };
 
-type LoginFormValues = {
+type RegisterFormValues = {
     email: string;
     password: string;
 };
@@ -19,14 +19,14 @@ export default function RegisterForm() {
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
 
-    const form = useForm<LoginFormValues>({
+    const form = useForm<RegisterFormValues>({
         defaultValues: {
             email: "",
             password: "",
         },
     });
 
-    const onSubmit = (data: LoginFormValues) => {
+    const onSubmit = (data: RegisterFormValues) => {
         const email = LoginSchema.email.safeCheck(data.email);
         const password = LoginSchema.password.safeCheck(data.password);
 

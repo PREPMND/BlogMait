@@ -1,4 +1,5 @@
 import { pgTable, varchar, boolean, timestamp,text} from 'drizzle-orm/pg-core'
+import { title } from 'process'
 
 export const users = pgTable('users', {
     id: varchar('id', { length: 255 }).primaryKey(),
@@ -32,5 +33,5 @@ export const accounts = pgTable('accounts', {
 
 export const posts = pgTable('posts',{
     id: varchar('id', { length: 255 }).primaryKey(),
-    name: varchar('name', { length: 255 }).notNull(),
+    title: varchar('title', { length: 255 }).notNull(),
 })

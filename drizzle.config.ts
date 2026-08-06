@@ -10,4 +10,4 @@ export default ({
     },
     verbose:true,
     strict:true
-})
+}) as Config

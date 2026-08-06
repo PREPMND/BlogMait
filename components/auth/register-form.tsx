@@ -36,12 +36,12 @@ export default function RegisterForm() {
     });
 
     const onSubmit = async (data: RegisterFormValues) => {
-        // Reset message alerts on every click
+        // reset message alerts on every click
         seterrorRegister(false);
         setErorrMesssage("");
         setSuccess(false);
 
-        // 1. Client-Side Input Valdation Checks
+        // client-Side Input Valdation Checks
         const usernameCheck = RegisterSchema.username.safeCheck(data.username);
         const emailCheck = RegisterSchema.email.safeCheck(data.email);
         const passwordCheck = RegisterSchema.password.safeCheck(data.password);

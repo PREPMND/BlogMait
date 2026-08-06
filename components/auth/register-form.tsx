@@ -100,6 +100,16 @@ export default function RegisterForm() {
                     {...form.register("password")}
                 />
             </div>
+            <div className="space-y-2 w-full md:max-w-[70%]">
+                <Label htmlFor="email"><span>   </span>Email</Label>
+                <Input
+                    className="min-h-[38px] "
+                    id="email"
+                    type="email"
+                    placeholder="Enter your email"
+                    {...form.register("email")}
+                />
+            </div>
             <div>{errorRegister && (
                 <div className="text-red-400 text-[14px]">
                     {errorMessage}

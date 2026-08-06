@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { signIn } from "@/lib/auth-client"; // Imported Better-Auth sign-in helper
+import { signIn } from "@/lib/auth-client";
 import { useRouter } from "next/navigation"; 
 
 const LoginSchema = {

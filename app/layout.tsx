@@ -41,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfair.variable} ${poppins.variable} ${quicksand.variable} h-full antialiased`}
     >
       <body className="h-full flex flex-col">
-        <ThemeProvider attribute={'class'}  defaultTheme="system" enableSystem disableTransitionOnChange containerClassName=" md:w-[70%]  w-[99%] border-l-1 border-r-1 min-h-[100vh] dark:bg-neutral-900 bg-white/70 border-gray-300 rounded-lg border-t-1 border-t-neutral-900 dark:border-neutral-700">
+        <ThemeProvider attribute={'class'}  defaultTheme="system" enableSystem disableTransitionOnChange containerClassName=" md:w-[70%]  w-[99%] border-l-1 border-1 min-h-[100vh] dark:bg-neutral-900 bg-white/70 border-gray-300 rounded-lg border-t-1 border-t-neutral-900 dark:border-neutral-700">
           {children}
         </ThemeProvider>
       </body>

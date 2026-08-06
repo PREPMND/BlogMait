@@ -12,6 +12,7 @@ const RegisterSchema = {
 type RegisterFormValues = {
     email: string;
     password: string;
+    
 };
 
 export default function RegisterForm() {

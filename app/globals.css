@@ -7,6 +7,13 @@
   --font-heading: var(--font-poppins);
   --font-rounded-body: var(--font-quicksand);
 }
+@import "tailwindcss";
+
+@theme {
+  /* This creates the xs utility breakpoint at 480px */
+  --breakpoint-xs: 480px;
+}
+
 
 @theme inline {
   --color-background: var(--background);

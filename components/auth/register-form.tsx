@@ -104,7 +104,7 @@ export default function RegisterForm() {
                 <Label htmlFor="email"><span>   </span>Confirm Password</Label>
                 <Input
                     className="min-h-[38px] "
-                    id="email"
+                    id="confirm-password"
                     type="text"
                     placeholder="Enter your email"
                     {...form.register("email")}

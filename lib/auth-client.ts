@@ -1,1 +1,1 @@
-import { Create } from "betterauth/react"
+import { createAuthClient} from "better-auth/react"

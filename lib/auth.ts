@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth";
 import {drizzleAdapter} from "better-auth/adapters/drizzle"
-import { db } from "./db";
+import { db } from "./db/index";
 export const auth=betterAuth({
     appName:"Blog Next",
     secret:process.env.BETTER_AUTH_SECRET || '',

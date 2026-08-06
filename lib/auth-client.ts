@@ -1,1 +1,1 @@
-import { createAuthC}
+import { CreateAuth}

@@ -25,7 +25,7 @@ export default function AuthLayout() {
                     </div>
                 </TabsContent>
                 <TabsContent value="register">
-                    <div className="p-4">
+                    <div className="p">
                         <RegisterForm/>
                     </div>
                 </TabsContent>

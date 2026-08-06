@@ -17,6 +17,6 @@ export const sessions = pgTable('sessions', {
 
     expiresAt: timestamp("expires_at").notNull(),
     ipAddess:varchar('ip_address',{length:255}),
-    userAgent:text('user_agent',{length:255,})
+    userAgent:text('user_agent',{length:255})
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

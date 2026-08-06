@@ -101,7 +101,7 @@ export default function RegisterForm() {
                 />
             </div>
             <div className="space-y-2 w-full md:max-w-[70%]">
-                <Label htmlFor="email"><span>   </span>Email</Label>
+                <Label htmlFor="email"><span>   </span>Confirm Password</Label>
                 <Input
                     className="min-h-[38px] "
                     id="email"

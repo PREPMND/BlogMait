@@ -10,7 +10,7 @@ interface BlogCardProps {
   slug: string;
 }
 
-export default function BlogCard({ id, title, description, slug }: BlogCardProps) {
+export default function BlogCard1({ id, title, description, slug }: BlogCardProps) {
   const router = useRouter();
   const [isPressed, setIsPressed] = useState(false);
 

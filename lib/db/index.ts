@@ -8,4 +8,5 @@ const pool = new Pool({
     process.env.NODE_ENV==='production'?{
         rejectUnauthorized:false,
     }:false,
+    max:10
 })

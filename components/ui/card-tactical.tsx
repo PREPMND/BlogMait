@@ -56,7 +56,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
 
     return (
         <div className="[perspective:1000px] select-none">
-            <style jsx>{``
+            <style jsx>{`
                 @keyframes ambientGlow {
                     0 %, 100 % {
                         border- color: rgb(64 64 64);

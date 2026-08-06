@@ -4,7 +4,7 @@ import { title } from "process";
 
 export default function PostDetail(){
     const Posts=[{
-        title:
+        title:'hey'
     }]
     return(
         <>

@@ -1,8 +1,11 @@
 import Perfect3DTiltCard from "@/components/ui/card-tactical";
 import BlogCard from "@/components/ui/card-tactical1";
+import { title } from "process";
 
 export default function PostDetail(){
-    const 
+    const Posts=[{
+        title:
+    }]
     return(
         <>
         <div>

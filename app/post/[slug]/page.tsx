@@ -5,7 +5,7 @@ export default function PostDetail(){
         <>
         <div>
             post detail
-            <BlogCard title="hey" description=""
+            <BlogCard title="hey" description="hey" slug=""
         </div>
         </>
     )

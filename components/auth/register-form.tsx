@@ -67,10 +67,9 @@ export default function RegisterForm() {
         if (data.password !== data.confirmPassword) {
             seterrorRegister(true);
             setErorrMesssage("Passwords are not matching");
-            return; // Added return to prevent continuing on mismatch
+            return;
         }
 
-        // 2. Submit to Database via Better-Auth
         try {
             setLoading(true);
             const { error } = await signUp.email({

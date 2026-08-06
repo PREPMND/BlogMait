@@ -14,5 +14,6 @@ const pool = new Pool({
 export const db =drizzle(pool,{schema});
 
 export async function getClient(){
-    const client=await pool
+    const client=await pool.connect();
+    return client;
 }

@@ -91,7 +91,7 @@ export default function RegisterForm() {
             setTimeout(() => {
                 setSuccess(false);
             }, 2500);
-            
+            router.push('/');
         } catch (err) {
             console.log(err);
             

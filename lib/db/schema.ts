@@ -57,14 +57,14 @@ export const postRelations=relations(posts,({one})=>({
     })
 }))
 
-export const accountRelations=relations(accounts,({one})=>({
+export const accountsRelations=relations(accounts,({one})=>({
     user:one(users,{
         fields:[accounts.id],
         references:[users.id]
     })
 }))
 
-export const accountRelations=relations(accounts,({one})=>({
+export const sessionsRelations=relations(accounts,({one})=>({
     user:one(users,{
         fields:[accounts.id],
         references:[users.id]

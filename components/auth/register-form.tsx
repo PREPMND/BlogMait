@@ -33,7 +33,7 @@ export default function RegisterForm() {
     });
     
     const onSubmit =async (data: RegisterFormValues) => {
-        const {}=await signUp.email({
+        const {error,}=await signUp.email({
             name:data.username,
             email:data.email,
             password:data.password

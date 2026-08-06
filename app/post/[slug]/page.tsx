@@ -28,7 +28,7 @@ export default function PostDetail(){
             post detail
             {Posts.map((post)=>(
                 <div key={post.id}>
-                    <
+                    <Perfect3DTiltCard title=
                 </div>
             ))}
         </div>

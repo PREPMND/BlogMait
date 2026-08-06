@@ -1,3 +1,3 @@
-export default function Auth(){
-    
+export default auth={
+
 }

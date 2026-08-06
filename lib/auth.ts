@@ -1,6 +1,6 @@
 import { betterAuth } from "better-auth";
 
-export default auth=betterAuth({
+export const auth=betterAuth({
     emailAndPassword:{
         enabled:true,
     }

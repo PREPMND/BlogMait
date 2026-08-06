@@ -1,1 +1,1 @@
-import {drizzle} from "driz"
+import {drizzle} from "drizzle-orm/node-postgres"

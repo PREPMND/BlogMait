@@ -27,8 +27,8 @@ export default function PostDetail(){
         <div>
             post detail
             {Posts.map((post)=>(
-                <div>
-                    
+                <div key={post.id}>
+                    <
                 </div>
             ))}
         </div>

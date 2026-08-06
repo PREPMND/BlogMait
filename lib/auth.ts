@@ -1,3 +1,5 @@
-export default auth=({
+import { betterAuth } from "better-auth";
+
+export default auth=betterAuth({
 
 })

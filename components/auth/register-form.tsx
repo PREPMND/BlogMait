@@ -126,7 +126,7 @@ export default function RegisterForm() {
                     </div>
                 )}
             </div>
-            <Button className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.04] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-emerald-300`} type="submit">
+            <Button className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-`} type="submit">
                 Register
             </Button>
         </form>

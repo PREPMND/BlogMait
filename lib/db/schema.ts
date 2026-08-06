@@ -34,5 +34,5 @@ export const accounts = pgTable('accounts', {
 export const posts = pgTable('posts',{
     id: varchar('id', { length: 255 }).primaryKey(),
     title: varchar('title', { length: 255 }).notNull(),
-    description:
+    description:varchar('description', { length: 255 }).notNull(),
 })

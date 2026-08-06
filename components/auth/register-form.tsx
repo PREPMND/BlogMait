@@ -93,6 +93,7 @@ export default function RegisterForm() {
                 setSuccess(false);
             }, 2500);
             router.push('/');
+            router.refresh();
         } catch (err) {
             console.log(err);
             

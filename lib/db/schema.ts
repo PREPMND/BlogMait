@@ -30,4 +30,4 @@ export const accounts = pgTable('accounts', {
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
 
-export const 
+export const posts =

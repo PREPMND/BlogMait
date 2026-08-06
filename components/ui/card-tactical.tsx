@@ -56,23 +56,23 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
 
     return (
         <div className="[perspective:1000px] select-none">
-            <style jsx>{`
-        @keyframes ambientGlow {
-  0%, 100% {
-    border-color: rgb(64 64 64);
-    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+            <style jsx>{``
+                @keyframes ambientGlow {
+                    0 %, 100 % {
+                        border- color: rgb(64 64 64);
+                box-shadow: 0 12px 30px rgba(0,0,0,.35);
   }
 
-  50% {
-    border-color: rgb(82 82 82);
-    box-shadow: 0 12px 30px rgba(0,0,0,.35);
+                50% {
+                    border - color: rgb(82 82 82);
+                box-shadow: 0 12px 30px rgba(0,0,0,.35);
         }
          }
 
-        .glowing-card {
-        animation: ambientGlow 4s ease-in-out infinite;
-         will-change: transform;
-       }
+                .glowing-card {
+                    animation: ambientGlow 4s ease-in-out infinite;
+                will-change: transform;
+       ``}
       }</style>
 
             <motion.div

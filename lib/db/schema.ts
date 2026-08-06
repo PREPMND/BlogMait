@@ -43,12 +43,12 @@ export const posts = pgTable('posts',{
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
 
-export const userRelations=relations(posts,({one})=>{
+export const userRelations=relations(posts,({one})=>({
     author:one(users,{
         fields:[posts.authorId],
         references:[users.id]
     })
-})
+}))
 //one auht/usr per post
 export const postRelations=relations(posts,({one})=>({
     author:one(users,{

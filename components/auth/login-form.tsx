@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { signIn } from "@/lib/auth-client"; // Imported Better-Auth sign-in helper
+import { useRouter } from "next/navigation"; // Correct hook for Next.js App Router
+
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
     password: string().min(8).max(30),
@@ -18,6 +21,8 @@ export default function LoginForm() {
     const [errorLogin, seterrorLogin] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
+    const [loading, setLoading] = useState(false); // Loading state tracking variable
+    const router = useRouter(); // App Router instantiation
 
     const form = useForm<LoginFormValues>({
         defaultValues: {
@@ -26,34 +31,58 @@ export default function LoginForm() {
         },
     });
 
-    const onSubmit = (data: LoginFormValues) => {
-        const email = LoginSchema.email.safeCheck(data.email);
-        const password = LoginSchema.password.safeCheck(data.password);
-
-        if (!email.ok) {
-            console.log(email.error);
-            seterrorLogin(true);
-            setErorrMesssage(email.error);
-            setSuccess(false);
-            return;
-        }
-
-        if (!password.ok) {
-            console.log(password.error);
-            seterrorLogin(true);
-            setErorrMesssage(password.error);
-            setSuccess(false);
-            return;
-        }
-
-        console.log("Valid Data:", data);
-        setSuccess(true);
-
-        setTimeout(() => {
-            setSuccess(false);
-        }, 2500);
+    const onSubmit = async (data: LoginFormValues) => {
+        // Reset state triggers on fresh execution loop
         seterrorLogin(false);
         setErorrMesssage("");
+        setSuccess(false);
+
+        // 1. Client-Side Parsing Gating Checks
+        const emailCheck = LoginSchema.email.safeCheck(data.email);
+        const passwordCheck = LoginSchema.password.safeCheck(data.password);
+
+        if (!emailCheck.ok) {
+            console.log(emailCheck.error);
+            seterrorLogin(true);
+            setErorrMesssage(emailCheck.error);
+            return;
+        }
+
+        if (!passwordCheck.ok) {
+            console.log(passwordCheck.error);
+            seterrorLogin(true);
+            setErorrMesssage(passwordCheck.error);
+            return;
+        }
+
+        // 2. Authenticate Session via Better-Auth Server API Pipeline
+        try {
+            setLoading(true);
+            const { error } = await signIn.email({
+                email: data.email,
+                password: data.password,
+            });
+
+            if (error) {
+                seterrorLogin(true);
+                setErorrMesssage(error.message || "Invalid credentials provided.");
+                return;
+            }
+
+            console.log("Valid Data:", data);
+            setSuccess(true);
+
+            // Execute client-side redirection wrapper target
+            router.push('/');
+            router.refresh(); // Refresh route context tree to load fresh cookie states
+
+        } catch (err) {
+            console.log(err);
+            seterrorLogin(true);
+            setErorrMesssage("Network error. Could not connect to server.");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -92,8 +121,12 @@ export default function LoginForm() {
                     </div>
                 )}
             </div>
-            <Button className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-indigo-200`} type="submit">
-                Login
+            <Button
+                disabled={loading} // Freezes execution loop buttons during pending database traffic
+                className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-indigo-200`}
+                type="submit"
+            >
+                {loading ? "Verifying..." : "Login"}
             </Button>
         </form>
     );

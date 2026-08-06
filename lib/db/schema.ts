@@ -14,6 +14,6 @@ export const sessions = pgTable('sessions', {
     userId: varchar('user_id', { length: 255 }).references(() => users.id).notNull(),
     token:varchar('token',{length:255}),
 
-    expiresAt: timestamp("created_at").defaultNow().notNull(),
+    expiresAt: timestamp("expires_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

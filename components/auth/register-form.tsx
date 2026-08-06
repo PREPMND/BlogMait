@@ -79,7 +79,7 @@ export default function RegisterForm() {
                     id="username"
                     type="text"
                     placeholder="Enter your email"
-                    {...form.register("email")}
+                    {...form.register("username")}
                 />
             </div>
             <div className="space-y-2 w-full md:max-w-[70%]">

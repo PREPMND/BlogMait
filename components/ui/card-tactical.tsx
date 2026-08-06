@@ -47,7 +47,7 @@ export default function BlogCard({ id, title, description, slug }: BlogCardProps
         ${isPressed ? "translate-x-[2px] translate-y-[2px] shadow-[2px_2px_0px_0px_rgba(56,189,248,1)]" : ""}
         
         /* 4. Desktop Hover Micro-Movements */
-        hover:-translate-y-[2px] hover:-translate-x-[2px] hover:shadow-[6px_6px_0px_0px_rgba(56,189,248,1)]
+         hover:shadow-[6px_6px_0px_0px_rgba(56,189,248,1)]
         active:translate-x-[3px] active:translate-y-[3px] active:shadow-[1px_1px_0px_0px_rgba(56,189,248,1)]
       `}
     >

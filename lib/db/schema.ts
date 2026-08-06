@@ -45,6 +45,6 @@ export const posts = pgTable('posts',{
 
 const userRelations=relations(posts,({posts})=>{
     author:one(users,{
-        fields
+        fields=
     })
 })

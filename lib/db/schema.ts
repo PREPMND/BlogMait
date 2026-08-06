@@ -6,4 +6,5 @@ export const users = pgTable('users',{
     email:varchar('email',{length:255}).notNull().unique(),
     emailVerified:boolean("email_verfiied").default(false),
     createdAt:timestamp("created_at").defaultNow().notNull(),
+    createdAt:timestamp("created_at").defaultNow().notNull(),
 })

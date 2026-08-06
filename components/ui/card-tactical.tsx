@@ -11,48 +11,43 @@ interface BlogCardProps {
   slug: string;
 }
 
-export default function SmoothBlogCard({ id, title, description, slug }: BlogCardProps) {
+export default function Perfect3DTiltCard({ id, title, description, slug }: BlogCardProps) {
   const router = useRouter();
   const cardRef = useRef<HTMLDivElement>(null);
 
-  // Initialize Spring Physics values for buttery smooth 3D rotations
+  // 3D Rotation tracking values
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
-  const scale = useMotionValue(1);
 
-  // High damping & mass settings to make the tilt feel heavy, premium, and slow to slide
-  const springConfig = { stiffness: 180, damping: 26, mass: 0.8 };
+  // Spring settings - lower damping makes it react instantly and feel fluid
+  const springConfig = { stiffness: 150, damping: 15, mass: 0.6 };
   const rotateXSpring = useSpring(rotateX, springConfig);
   const rotateYSpring = useSpring(rotateY, springConfig);
-  const scaleSpring = useSpring(scale, springConfig);
 
-  // Calculates the exact corner/edge coordinate clicked to depress it
-  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+  // 1. DYNAMIC HOVER TRACKING: Runs the exact millisecond the cursor moves over the card
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
 
-    // Position of cursor relative to card top-left corner
+    // Pinpoint where the cursor is touching inside the 12cm container
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
 
-    // Normalise coordinates (-0.5 to 0.5) relative to card center
-    // Max tilt set to ~7 degrees for a premium, understated depth feel
-    const rX = (mouseY / height - 0.5) * -7; 
-    const rY = (mouseX / width - 0.5) * 7;   
+    // Calculate rotation angle based on cursor position (-10 to 10 degree limits)
+    const rX = (mouseY / height - 0.5) * -12; 
+    const rY = (mouseX / width - 0.5) * 12;   
 
     rotateX.set(rX);
     rotateY.set(rY);
-    scale.set(0.99); // Imperceptible dip inward to enhance the push illusion
   };
 
-  // Smoothly returns back to perfect dead-flat alignment on release
-  const handlePointerUp = () => {
+  // 2. RESET STATE: Instantly flattens back out when the hand leaves the card
+  const handlePointerLeave = () => {
     rotateX.set(0);
     rotateY.set(0);
-    scale.set(1);
   };
 
   const handleDoubleClick = () => {
@@ -60,44 +55,43 @@ export default function SmoothBlogCard({ id, title, description, slug }: BlogCar
   };
 
   return (
-    <div 
-      // 1. Perspective wrapper gives the browser genuine 3D tracking depth
-      className="[perspective:1200px] select-none"
-    >
+    <div className="[perspective:1000px] select-none">
       <style jsx>{`
         @keyframes ambientGlow {
-          0%, 100% { border-color: rgba(226, 232, 240, 0.8); box-shadow: 0 0 15px rgba(56, 189, 248, 0.05); }
-          50% { border-color: rgba(186, 230, 253, 1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.15); }
+          0%, 100% { border-color: rgba(226, 232, 240, 0.8); box-shadow: 0 0 15px rgba(56, 189, 248, 0.04); }
+          50% { border-color: rgba(186, 230, 253, 0.9); box-shadow: 0 0 25px rgba(56, 189, 248, 0.12); }
         }
         .glowing-card {
           animation: ambientGlow 4s ease-in-out infinite;
+          will-change: transform; /* Forces GPU acceleration for ultra-smooth rendering */
         }
       `}</style>
 
       <motion.div
         ref={cardRef}
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp} 
+        onPointerMove={handlePointerMove}
+        onPointerLeave={handlePointerLeave} 
         onDoubleClick={handleDoubleClick}
         style={{
           rotateX: rotateXSpring,
           rotateY: rotateYSpring,
-          scale: scaleSpring,
           transformStyle: "preserve-3d",
         }}
-        // 2. Transformed to match your specific 12cm x 7.5cm proportion layout
         className="glowing-card w-[284px] h-[453px] p-6 bg-white text-slate-800 cursor-pointer 
                    border border-slate-200 rounded-2xl flex flex-col justify-between
-                   transition-colors duration-300"
+                   transition-colors duration-200"
       >
-        <div className="space-y-3 pointer-events-none" style={{ transform: "translateZ(5px)" }}>
+        {/* translateZ forces the text elements to pop out slightly in real 3D depth */}
+        <div className="space-y-3 pointer-events-none" style={{ transform: "translateZ(20px)" }}>
           <span className="text-xs font-semibold text-slate-400 tracking-wider">ARTICLE #{id}</span>
           <h3 className="text-xl font-bold tracking-tight text-slate-900 leading-snug">{title}</h3>
           <p className="text-sm text-slate-500 leading-relaxed line-clamp-6">{description}</p>
         </div>
 
-        <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 pointer-events-none">
+        <div 
+          className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 pointer-events-none"
+          style={{ transform: "translateZ(10px)" }}
+        >
           <span>Double-click to open</span>
           <span className="text-sky-400/70">✦</span>
         </div>

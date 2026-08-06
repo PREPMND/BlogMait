@@ -66,14 +66,14 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
   50% {
     border-color: rgb(82 82 82);
     box-shadow: 0 12px 30px rgba(0,0,0,.35);
-  }
+        }
          }
 
         .glowing-card {
         animation: ambientGlow 4s ease-in-out infinite;
          will-change: transform;
        }
-      `}</style>
+      }</style>
 
             <motion.div
                 ref={cardRef}

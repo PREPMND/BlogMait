@@ -5,7 +5,7 @@ import { describe } from "zod/v4/core";
 
 export default function PostDetail(){
     const Posts=[{
-        title:'hey',description:'hey'
+        title:'hey',description:'hey',slug:'hey',id
     }]
     return(
         <>

@@ -1,1 +1,1 @@
-import {defineConfig} from "drizzle"
+import {defineConfig} from "drizzle-kit"

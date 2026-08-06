@@ -1,5 +1,6 @@
 import {defineConfig} from "drizzle-kit";
 
 export default defineConfig({
-    dialect:"postg"
+    dialect:"postgresql",
+    out:""
 })

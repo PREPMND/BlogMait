@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
+import { signUp } from "@/lib/auth-client";
 const RegisterSchema = {
     username:string().min(4).max(20),
     email: string().min(5).max(30).contains("@").contains("."),
@@ -32,7 +33,7 @@ export default function RegisterForm() {
     });
     
     const onSubmit = (data: RegisterFormValues) => {
-        const {}=await S
+        const {}=await signUp
         const username =RegisterSchema.username.safeCheck(data.username);
         const email = RegisterSchema.email.safeCheck(data.email);
         const password = RegisterSchema.password.safeCheck(data.password);

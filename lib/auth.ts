@@ -4,7 +4,9 @@ import { db } from "./db/index";
 export const auth=betterAuth({
     appName:"Blog Next",
     secret:process.env.BETTER_AUTH_SECRET || '',
-    database:drizzleAdapter(db),
+    database:drizzleAdapter(db,{
+        provider:
+    }),
     emailAndPassword:{
         enabled:true,
         requireEmailVerification:false,

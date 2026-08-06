@@ -63,3 +63,10 @@ export const accountRelations=relations(accounts,({one})=>({
         references:[users.id]
     })
 }))
+
+export const accountRelations=relations(accounts,({one})=>({
+    user:one(users,{
+        fields:[accounts.id],
+        references:[users.id]
+    })
+}))

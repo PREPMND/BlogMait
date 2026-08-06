@@ -3,5 +3,5 @@ import { Pool} from "pg"
 import * as schema from "./schema"
 
 const pool = new Pool({
-    
+    connectionString:process.env.
 })

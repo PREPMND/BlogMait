@@ -41,3 +41,5 @@ export const posts = pgTable('posts',{
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
+
+const userRelations

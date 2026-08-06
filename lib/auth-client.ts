@@ -1,5 +1,5 @@
 import { createAuthClient} from "better-auth/react"
 
 export const authClient= createAuthClient({
-    basePath:
-})
+    baseURL:process.env.BASE_URL
+,})

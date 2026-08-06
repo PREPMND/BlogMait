@@ -1,4 +1,5 @@
 import { pgTable, varchar, boolean, timestamp } from 'drizzle-orm/pg-core'
+import { userAgent } from 'next/server'
 
 export const users = pgTable('users', {
     id: varchar('id', { length: 255 }).primaryKey(),
@@ -16,5 +17,6 @@ export const sessions = pgTable('sessions', {
 
     expiresAt: timestamp("expires_at").notNull(),
     ipAddess:varchar('ip-address',{length:255}),
+    userAgent:text('')
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

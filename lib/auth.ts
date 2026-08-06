@@ -9,9 +9,9 @@ export const auth=betterAuth({
         provider:'pg',
         schema:{
             ...schema,
-            user:schema.user,
+            user:schema.users,
             session:schema.sessions,
-            
+            account:schema.accounts
         }
     }),
     emailAndPassword:{

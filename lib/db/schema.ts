@@ -56,3 +56,10 @@ export const postRelations=relations(posts,({one})=>({
         references:[users.id]
     })
 }))
+
+export const accountRelations=relations(posts,({one})=>({
+    author:one(users,{
+        fields:[posts.authorId],
+        references:[users.id]
+    })
+}))

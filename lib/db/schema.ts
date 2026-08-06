@@ -49,6 +49,7 @@ export const userRelations=relations(posts,({one})=>{
         references:[users.id]
     })
 })
+//one auht/usr per post
 export const postRelations=relations(posts,({one})=>{
     author:one(users,{
         fields:[posts.authorId],

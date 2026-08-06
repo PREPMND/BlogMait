@@ -44,5 +44,5 @@ export const posts = pgTable('posts',{
 })
 
 const userRelations=relations(posts,({posts})=>{
-
+    
 })

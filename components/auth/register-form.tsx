@@ -32,7 +32,7 @@ export default function RegisterForm() {
         },
     });
     
-    const onSubmit = (data: RegisterFormValues) => {
+    const onSubmit =async (data: RegisterFormValues) => {
         const {}=await signUp.email({
             name:data.username,
             email:data.email,

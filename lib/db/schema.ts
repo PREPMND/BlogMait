@@ -31,5 +31,6 @@ export const accounts = pgTable('accounts', {
 })
 
 export const posts = pgTable('posts',{
-    
+    id: varchar('id', { length: 255 }).primaryKey(),
+    name: varchar('name', { length: 255 }).notNull(),
 })

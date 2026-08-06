@@ -126,7 +126,7 @@ export default function RegisterForm() {
                     </div>
                 )}
             </div>
-            <Button className={`w-[110px] mx-auto py-4 border-b-1 border-l-1`} type="submit">
+            <Button className={`w-[110px] mx-auto py-4 border-bsy-1 border-l-sky-100`} type="submit">
                 Register
             </Button>
         </form>

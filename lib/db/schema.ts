@@ -15,5 +15,6 @@ export const sessions = pgTable('sessions', {
     token:varchar('token',{length:255}),
 
     expiresAt: timestamp("expires_at").notNull(),
+    ipAddess:
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

@@ -67,9 +67,16 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
     }
 }
 
-.glowing-card{
-    animation:ambientGlow 5s ease-in-out infinite;
-    will-change:transform;
+             .glowing-card{
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.12),
+    inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+.dark .glowing-card{
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.45),
+    inset 0 1px 0 rgba(255,255,255,.06);
 }
             `}</style>
 

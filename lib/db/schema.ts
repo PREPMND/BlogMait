@@ -39,7 +39,7 @@ export const posts = pgTable('posts',{
     authorId:varchar('author_id', { length: 255 }).references(() => users.id).notNull(),
     isPublished:boolean('is_published'),
     isDraft:boolean('is_draft'),
-    thumnail:
+    thumnail:varchar("thumbnail", { length: 500 }).notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

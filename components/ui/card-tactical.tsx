@@ -102,7 +102,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                     className="pt-1 pointer-events-none"
                     style={{ transform: "translateZ(20px)" }}
                 >
-                    <span className="text-xs  font-semibold text-neutral-700 tracking-wider">
+                    <span className="text-xs font-semibold text-neutral-700 tracking-wider">
                         ARTICLE #{id}
                     </span>
 

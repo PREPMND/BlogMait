@@ -98,7 +98,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image }
                     inset 0 -1px 0 rgba(255,255,255,.02)
                     `,
                 }}
-                className="glowing-card max-w-[99%] m-auto w-[340px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[330px] px-6 pt-4 pb-4 dark:bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex cursor-pointer flex-col justify-between backdrop-blur-md transition-colors duration-200  "
+                className="glowing-card max-w-[99%] m-auto w-[300px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[330px] px-6 pt-4 pb-4 dark:bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex cursor-pointer flex-col justify-between backdrop-blur-md transition-colors duration-200  "
             >
                 <div
                     className="pt-1 pointer-events-none"

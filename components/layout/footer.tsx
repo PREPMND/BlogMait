@@ -23,9 +23,9 @@ export function Footer() {
         <footer className="relative mt-20 overflow-hidden border-t border-neutral-200 bg-neutral-50 dark:border-white/10 dark:bg-neutral-950">
             {/* Background */}
             <div className="absolute inset-0  overflow-hidden">
-                <div className="absolute -left-24 top-0 h-52 w-52 rounded-full bg-sky-500/10 blur-3xl dark:bg-sky-500/10" />
+                <div className="absolute -left-24 top-0 h-44 w-52 rounded-full bg-sky-500/10 blur-3xl dark:bg-sky-500/10" />
 
-                <div className="absolute -right-24 bottom-0 h-48 w-48 rounded-full bg-violet-500/10 blur-3xl dark:bg-violet-500/10" />
+                <div className="absolute -right-24 bottom-0 h-52 w-52 rounded-full bg-violet-500/10 blur-3xl dark:bg-violet-500/10" />
 
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.04)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:42px_42px] opacity-40 dark:opacity-20" />
             </div>

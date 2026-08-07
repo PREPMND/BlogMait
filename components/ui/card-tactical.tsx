@@ -11,7 +11,7 @@ interface BlogCardProps {
     slug: string;
 }
 
-export default function Perfect3DTiltCard({ id, title, description, slug }: BlogCardProps) {
+export default function Perfect3DTiltCard({ id, title, description, slug,image }: BlogCardProps) {
     const router = useRouter();
     const cardRef = useRef<HTMLDivElement>(null);
 

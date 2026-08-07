@@ -99,7 +99,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                 className="glowing-card max-w-[99%] m-auto w-[360px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[300px] p-6 dark:bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-400  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex flex-col justify-between backdrop-blur-md transition-colors duration-200  "
             >
                 <div
-                    className="space-y-3 pointer-events-none"
+                    className="pt-1 pointer-events-none"
                     style={{ transform: "translateZ(20px)" }}
                 >
                     <span className="text-xs  font-semibold text-neutral-700 tracking-wider">

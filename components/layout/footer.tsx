@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Github, Linkedin, Sparkles, Cpu, ImageIcon, ArrowUpRight } from "lucide-react";
+import { Sparkles, Cpu, ImageIcon, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
     return (

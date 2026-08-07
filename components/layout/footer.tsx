@@ -22,7 +22,7 @@ export function Footer() {
     return (
         <footer className="relative mt-20 overflow-hidden border-t border-neutral-200 bg-neutral-50 dark:border-white/10 dark:bg-neutral-950">
             {/* Background */}
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 pt-4 overflow-hidden">
                 <div className="absolute -left-24 top-0 h-52 w-52 rounded-full bg-sky-500/10 blur-3xl dark:bg-sky-500/10" />
 
                 <div className="absolute -right-24 bottom-0 h-52 w-52 rounded-full bg-violet-500/10 blur-3xl dark:bg-violet-500/10" />

@@ -110,7 +110,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image }
                     </h3>
                     <img className="object-cover rounded-md aspect-[16/12]" src={image} alt={title} />
 
-                    <p className="text-sm text-neutral-600 line-clamp-2 leading-relaxed">
+                    <p className="text-sm text-neutral-600 dark: line-clamp-2 leading-relaxed">
                         {description}
                     </p>
                 </div>

@@ -109,6 +109,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                     <h3 className="text-xl line-clamp-2 font-bold tracking-tight text-neutral-100 leading-snug">
                         {title}
                     </h3>
+                    <img></img>
 
                     <p className="text-sm text-neutral-400 line-clamp-3 leading-relaxed">
                         {description}

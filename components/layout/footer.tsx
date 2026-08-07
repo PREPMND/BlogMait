@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Sparkles, Cpu, ImageIcon, ArrowUpRight, Link2 } from "lucide-react";
+import { Sparkles, Cpu, ImageIcon, ArrowUpRight, Link2, GitBranchIcon } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -98,7 +98,7 @@ export default function Footer() {
                                 href="#"
                                 className="group flex items-center gap-3 text-neutral-400 transition hover:text-white"
                             >
-                                <Github className="h-5 w-5" />
+                                <GitBranchIcon className="h-5 w-5" />
                                 GitHub
                                 <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
                             </Link>

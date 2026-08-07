@@ -2,85 +2,79 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
-import { Sparkles, Cpu, ImageIcon, ArrowUpRight, Link2, GitBranchIcon } from "lucide-react";
+import {
+    Sparkles,
+    Cpu,
+    ImageIcon,
+    ArrowUpRight,
+    Github,
+    Linkedin,
+} from "lucide-react";
 
 export function Footer() {
+    const features = [
+        { icon: Sparkles, text: "AI Generation" },
+        { icon: ImageIcon, text: "Image Jobs" },
+        { icon: Cpu, text: "Background Queue" },
+    ];
+
     return (
-        <footer className="relative mt-20 w-full md:w-[90%]  mx-auto h-16  border-t border-white/10 ">
+        <footer className="relative mt-20 overflow-hidden border-t border-neutral-200 bg-neutral-50 dark:border-white/10 dark:bg-neutral-950">
             {/* Background */}
-            <div className="absolute inset-0">
-                <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
-                <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-violet-500/10 blur-3xl" />
+            <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -left-24 top-0 h-52 w-52 rounded-full bg-sky-500/10 blur-3xl dark:bg-sky-500/10" />
 
-                <motion.div
-                    animate={{
-                        x: [0, 40, 0],
-                        y: [0, -20, 0],
-                    }}
-                    transition={{
-                        duration: 12,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute left-1/3 top-1/3 h-60 w-60 rounded-full bg-cyan-400/5 blur-xl"
-                />
+                <div className="absolute -right-24 bottom-0 h-52 w-52 rounded-full bg-violet-500/10 blur-3xl dark:bg-violet-500/10" />
 
-                <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,.04)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:42px_42px] opacity-40 dark:opacity-20" />
             </div>
 
+            {/* Top Shine */}
             <motion.div
-                initial={{ opacity: 0, y: 60 }}
+                animate={{ x: ["-100%", "120%"] }}
+                transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                }}
+                className="pointer-events-none absolute top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-sky-400 to-transparent"
+            />
+
+            <motion.div
+                initial={{ opacity: 0, y: 35 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="relative mx-auto max-w-7xl px-6 py-20"
+                transition={{ duration: 0.5 }}
+                className="relative mx-auto max-w-7xl px-6 py-12 md:py-16"
             >
-                <div className="grid gap-14 lg:grid-cols-2">
+                <div className="grid gap-10 lg:grid-cols-2">
                     {/* Left */}
-                    <div>
-                        <motion.h2
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: .15 }}
-                            className="text-4xl font-bold tracking-tight text-white"
-                        >
+                    <div className="text-center lg:text-left">
+                        <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white md:text-4xl">
                             Built for writers.
                             <br />
-                            <span className="bg-gradient-to-r from-sky-400 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-sky-500 via-blue-500 to-violet-500 bg-clip-text text-transparent">
                                 Powered by AI.
                             </span>
-                        </motion.h2>
+                        </h2>
 
-                        <p className="mt-6 max-w-xl text-neutral-400 leading-7">
-                            Create beautiful blogs, generate AI-assisted content,
-                            and let background jobs handle image generation while
-                            you focus on writing.
+                        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-neutral-600 dark:text-neutral-400 lg:mx-0 md:text-base">
+                            Create, edit and publish blogs with AI-assisted
+                            writing while background jobs seamlessly generate
+                            stunning images for every story.
                         </p>
 
-                        <div className="mt-8 flex flex-wrap gap-3">
-                            {[
-                                {
-                                    icon: Sparkles,
-                                    text: "AI Generation",
-                                },
-                                {
-                                    icon: ImageIcon,
-                                    text: "Image Jobs",
-                                },
-                                {
-                                    icon: Cpu,
-                                    text: "Background Queue",
-                                },
-                            ].map((item) => (
+                        <div className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
+                            {features.map((item) => (
                                 <motion.div
-                                    whileHover={{
-                                        y: -4,
-                                        scale: 1.04,
-                                    }}
                                     key={item.text}
-                                    className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-neutral-300 backdrop-blur-xl"
+                                    whileHover={{
+                                        y: -2,
+                                        scale: 1.03,
+                                    }}
+                                    className="flex items-center gap-2 rounded-full border border-neutral-300 bg-white/70 px-3 py-2 text-xs text-neutral-700 backdrop-blur-md dark:border-white/10 dark:bg-white/5 dark:text-neutral-300 sm:text-sm"
                                 >
-                                    <item.icon className="h-4 w-4 text-sky-400" />
+                                    <item.icon className="h-4 w-4 text-sky-500" />
                                     {item.text}
                                 </motion.div>
                             ))}
@@ -88,53 +82,57 @@ export function Footer() {
                     </div>
 
                     {/* Right */}
-                    <div className="flex flex-col justify-between lg:items-end">
-                        <div className="space-y-5">
-                            <h3 className="text-lg font-semibold text-white">
+                    <div className="flex flex-col items-center justify-between text-center lg:items-end lg:text-right">
+                        <div>
+                            <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-white">
                                 Connect
                             </h3>
 
-                            <Link
-                                href="#"
-                                className="group flex items-center gap-3 text-neutral-400 transition hover:text-neutral-700"
-                            >
-                                <GitBranchIcon className="h-5 w-5" />
-                                GitHub
-                                <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
-                            </Link>
+                            <div className="space-y-3">
+                                <Link
+                                    href="#"
+                                    className="group flex items-center justify-center gap-3 text-neutral-600 transition hover:text-sky-500 dark:text-neutral-400 dark:hover:text-white lg:justify-end"
+                                >
+                                    <Github className="h-5 w-5" />
+                                    GitHub
+                                    <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                                </Link>
 
-                            <Link
-                                href="#"
-                                className="group flex items-center gap-3 text-neutral-400 transition hover:text-neutral-700"
-                            >
-                                <Link2 className="h-5 w-5" />
-                                LinkedIn
-                                <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-1 group-hover:-translate-y-1" />
-                            </Link>
+                                <Link
+                                    href="#"
+                                    className="group flex items-center justify-center gap-3 text-neutral-600 transition hover:text-sky-500 dark:text-neutral-400 dark:hover:text-white lg:justify-end"
+                                >
+                                    <Linkedin className="h-5 w-5" />
+                                    LinkedIn
+                                    <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                                </Link>
+                            </div>
                         </div>
 
-                        <div className="mt-12 text-sm text-neutral-500 lg:text-right">
-                            <p>Built with Next.js · Tailwind · Drizzle · PostgreSQL</p>
+                        <div className="mt-10 border-t border-neutral-300 pt-6 text-sm text-neutral-500 dark:border-white/10 dark:text-neutral-500 lg:w-fit">
+                            <p>
+                                Built with{" "}
+                                <span className="font-medium text-neutral-700 dark:text-neutral-300">
+                                    Next.js
+                                </span>{" "}
+                                ·{" "}
+                                <span className="font-medium text-neutral-700 dark:text-neutral-300">
+                                    Drizzle
+                                </span>{" "}
+                                ·{" "}
+                                <span className="font-medium text-neutral-700 dark:text-neutral-300">
+                                    PostgreSQL
+                                </span>
+                            </p>
+
                             <p className="mt-2">
-                                © {new Date().getFullYear()} Your Blog App. All rights reserved.
+                                © {new Date().getFullYear()} Your Blog App. All
+                                rights reserved.
                             </p>
                         </div>
                     </div>
                 </div>
             </motion.div>
-
-            {/* Top Shine */}
-            <motion.div
-                animate={{
-                    x: ["-100%", "120%"],
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "linear",
-                }}
-                className="pointer-events-none absolute top-0 h-px w-1/3 bg-gradient-to-r from-transparent via-sky-400 to-transparent"
-            />
         </footer>
     );
 }

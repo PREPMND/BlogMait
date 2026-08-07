@@ -22,7 +22,7 @@ export function Footer() {
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute left-1/3 top-1/3 h-60 w-60 rounded-full bg-cyan-400/5 blur-3xl"
+                    className="absolute left-1/3 top-1/3 h-60 w-60 rounded-full bg-cyan-400/5 blur-xl"
                 />
 
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.04)_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />

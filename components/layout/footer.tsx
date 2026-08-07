@@ -7,7 +7,7 @@ import { Github, Linkedin, Sparkles, Cpu, ImageIcon, ArrowUpRight } from "lucide
 
 export default function Footer() {
     return (
-        <footer className="relative mt-10 overflow-hidden border-t border-white/10 bg-neutral-950">
+        <footer className="relative mt-10 w-full md:w-[90%] overflow-hidden border-t border-white/10 bg-neutral-950">
             {/* Background */}
             <div className="absolute inset-0">
                 <div className="absolute left-0 top-0 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />

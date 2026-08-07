@@ -26,7 +26,7 @@ export default function PostDetail(){
         <>
         <div className="grid  xs:grid-cols-2 lg:grid-cols-3 mb-10 mt-10 place-items-evenly gap-10 ">
             {Posts.map((post)=>(
-                <div className="dark:bg-neutral-900 bg-white/30" key={post.id}>
+                <div className="dark:bg-neutral-900 bg-white" key={post.id}>
                     <Perfect3DTiltCard title={post.title} description={post.description} slug={post.slug} id={post.id}/>
                 </div>
             ))}

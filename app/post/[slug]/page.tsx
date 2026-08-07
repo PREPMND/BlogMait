@@ -10,10 +10,10 @@ export default function PostDetail(){
         title:'hey',description:"The second effect is much more advanced (think Apples liquid glass or a localized 3D warp and uses a moving radial highlight/normal map illusion rather than just rotating the whole card. It looks significantly more premium if that's the effect you're after.",slug:'hey',id:1
         },
         {
-            title:'hey',description:'hey',slug:'hey',id:2,image:""
+            title:'hey',description:'hey',slug:'hey',id:2,image:"https://images.unsplash.com/photo-1784656217227-2ed7ee091176?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyNHx8fGVufDB8fHx8fA%3D%3D"
         },
         {
-            title:'hey',description:'hey',slug:'hey',id:3
+            title:'hey',description:'hey',slug:'hey',id:3,image:""
         },
         {
             title:'hey',description:'hey',slug:'hey',id:4

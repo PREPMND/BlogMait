@@ -89,7 +89,7 @@ export function Footer() {
                                 Connect
                             </h3>
 
-                            <div className="space-y-3">
+                            <div className="space-y-1">
                                 <Link
                                     href="#"
                                     className="group flex items-center justify-center gap-3 text-neutral-600 transition hover:text-sky-500 dark:text-neutral-400 dark:hover:text-white lg:justify-end"

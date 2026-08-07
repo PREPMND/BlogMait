@@ -71,13 +71,12 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
               box-shadow:
               0 20px 45px rgba(0,0,0,.12),
               inset 0 1px 0 rgba(255,255,255,.7);
-}
+               }
 
-.dark .glowing-card{
-  box-shadow:
-    0 20px 45px rgba(0,0,0,.45),
-    inset 0 1px 0 rgba(255,255,255,.06);
-}
+            .dark .glowing-card{
+            box-shadow:
+            0 20px 45px rgba(0,0,0,.45),
+            inset 0 1px 0 rgba(255,255,255,.06);}
             `}</style>
 
             <motion.div
@@ -97,7 +96,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                     inset 0 -1px 0 rgba(255,255,255,.02)
                     `,
                 }}
-                className="glowing-card max-w-[99%] m-auto w-[360px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[300px] p-6 bg-gradient-to-br from-neutral-900 via-neutral-900 to-neutral-700  dark:bg-neutral-900 text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex flex-col justify-between backdrop-blur-md transition-colors duration-200"
+                className="glowing-card max-w-[99%] m-auto w-[360px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[300px] p-6 bg-gradient-to-br dark:from-neutral-900 dark:via-neutral-800 dark:to-neutral-00  dark:bg-neutral-900 text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex flex-col justify-between backdrop-blur-md transition-colors duration-200"
             >
                 <div
                     className="space-y-3 pointer-events-none"

@@ -96,7 +96,7 @@ export function Footer() {
 
                             <Link
                                 href="#"
-                                className="group flex items-center gap-3 text-neutral-400 transition hover:text-white"
+                                className="group flex items-center gap-3 text-neutral-400 transition hover:text-neu"
                             >
                                 <GitBranchIcon className="h-5 w-5" />
                                 GitHub

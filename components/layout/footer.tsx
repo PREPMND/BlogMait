@@ -7,8 +7,7 @@ import {
     Cpu,
     ImageIcon,
     ArrowUpRight,
-    Github,
-    Linkedin,
+   
 } from "lucide-react";
 
 export function Footer() {

@@ -7,6 +7,7 @@ import {
     Cpu,
     ImageIcon,
     ArrowUpRight,
+    LinkIcon,
    
 } from "lucide-react";
 
@@ -101,7 +102,7 @@ export function Footer() {
                                     href="#"
                                     className="group flex items-center justify-center gap-3 text-neutral-600 transition hover:text-sky-500 dark:text-neutral-400 dark:hover:text-white lg:justify-end"
                                 >
-                                    <Linked className="h-5 w-5" />
+                                    <LinkIcon className="h-5 w-5" />
                                     LinkedIn
                                     <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-1 group-hover:translate-x-1" />
                                 </Link>

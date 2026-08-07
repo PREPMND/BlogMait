@@ -32,8 +32,8 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
 
-        const rX = (mouseY / rect.height - 0.5) * -24;
-        const rY = (mouseX / rect.width - 0.5) * 24;
+        const rX = (mouseY / rect.height - 0.5) * -16;
+        const rY = (mouseX / rect.width - 0.5) * 16;
 
         rotateX.set(rX);
         rotateY.set(rY);

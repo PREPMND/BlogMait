@@ -20,7 +20,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
     const rotateY = useMotionValue(0);
 
     // Spring settings
-    const springConfig = { stiffness: 180, damping: 15, mass: 0.6 };
+    const springConfig = { stiffness: 150, damping: 15, mass: 0.6 };
     const rotateXSpring = useSpring(rotateX, springConfig);
     const rotateYSpring = useSpring(rotateY, springConfig);
 

@@ -105,12 +105,12 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image }
                     style={{ transform: "translateZ(20px)" }}
                 >
 
-                    <h3 className="text-lg line-clamp-1 font-medium tracking-tight text-neutral-800 pb-1 leading-snug">
+                    <h3 className="text-lg line-clamp-1  font-medium tracking-tight text-neutral-800 pb-1 leading-snug">
                         {title}
                     </h3>
                     <img className="object-cover rounded-md aspect-[16/12]" src={image} alt={title} />
 
-                    <p className="text-sm text-neutral-600 dark: line-clamp-2 leading-relaxed">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-200 line-clamp-2 leading-relaxed">
                         {description}
                     </p>
                 </div>

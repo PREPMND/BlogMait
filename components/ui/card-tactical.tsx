@@ -83,11 +83,9 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                     rotateY: rotateYSpring,
                     transformStyle: "preserve-3d",
                     backgroundImage: `
-                    radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 35%),
-            linear-gradient(145deg, rgb(23 23 23), rgb(38 38 38))
-        `,
+                    radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 35%),linear-gradient(145deg, rgb(23 23 23), rgb(38 38 38)`,
                     boxShadow: `
-            0 20px 45px rgba(0,0,0,.45),
+                    0 20px 45px rgba(0,0,0,.45),
             inset 0 1px 0 rgba(255,255,255,.06),
             inset 0 -1px 0 rgba(255,255,255,.02)
         `,

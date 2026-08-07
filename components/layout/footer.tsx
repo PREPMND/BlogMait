@@ -110,7 +110,7 @@ export function Footer() {
                             </div>
                         </div>
 
-                        <div className="mt-10 border-t border-neutral-300 pt-6 text-sm text-neutral-500 dark:border-white/10 dark:text-neutral-500 lg:w-fit">
+                        <div className="mt-5 border-t border-neutral-300 pt-6 text-sm text-neutral-500 dark:border-white/10 dark:text-neutral-500 lg:w-fit">
                             <p>
                                 Built with{" "}
                                 <span className="font-medium text-neutral-700 dark:text-neutral-300">

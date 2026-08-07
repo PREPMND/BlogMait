@@ -100,7 +100,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug }: Blog
                 </div>
 
                 <div
-                    className="pt-4 border-t border-neutral-700 flex items-center justify-between text-xs text-neutral-500 pointer-events-none"
+                    className="pt-4 border-t bg-neutral-800 shadown border-neutral-700 flex items-center justify-between text-xs text-neutral-500 pointer-events-none"
                     style={{ transform: "translateZ(10px)" }}
                 >
                     <span>Double-click to open</span>

@@ -46,7 +46,7 @@ export function Footer() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="relative mx-auto max-w-7xl px-6 py-12 md:py-16"
+                className="relative mx-auto max-w-7xl px-6 py-10 md:py-16"
             >
                 <div className="grid gap-10 lg:grid-cols-2">
                     {/* Left */}

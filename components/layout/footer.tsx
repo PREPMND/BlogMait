@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { Sparkles, Cpu, ImageIcon, ArrowUpRight, Link2, GitBranchIcon } from "lucide-react";
 
-export default function Footer() {
+export function Footer() {
     return (
         <footer className="relative mt-10 w-full md:w-[90%]  mx-auto h-16 overflow-hidden border-t border-white/10 bg-neutral-950">
             {/* Background */}

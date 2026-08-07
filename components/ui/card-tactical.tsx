@@ -10,6 +10,7 @@ interface BlogCardProps {
     title: string;
     description: string;
     slug: string;
+    image:string;
 }
 
 export default function Perfect3DTiltCard({ id, title, description, slug,image }: BlogCardProps) {

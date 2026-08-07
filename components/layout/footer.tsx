@@ -59,13 +59,13 @@ export function Footer() {
                             </span>
                         </h2>
 
-                        <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-neutral-600 dark:text-neutral-400 lg:mx-0 md:text-base">
+                        <p className="mx-auto mt-2 max-w-xl text-sm leading-7 text-neutral-600 dark:text-neutral-400 lg:mx-0 md:text-base">
                             Create, edit and publish blogs with AI-assisted
                             writing while background jobs seamlessly generate
                             stunning images for every story.
                         </p>
 
-                        <div className="mt-6 flex flex-wrap justify-center gap-2 lg:justify-start">
+                        <div className="mt-4 flex flex-wrap justify-center gap-2 lg:justify-start">
                             {features.map((item) => (
                                 <motion.div
                                     key={item.text}

@@ -51,7 +51,7 @@ export function Footer() {
                 <div className="grid gap-10 lg:grid-cols-2">
                     {/* Left */}
                     <div className="text-center lg:text-left">
-                        <h2 className="text-3xl font-bold tracking-tight text-neutral-900 dark:text-white md:text-4xl">
+                        <h2 className="text-2xl font-bold tracking-tight text-neutral-900 dark:text-white md:text-4xl">
                             Built for writers.
                             <br />
                             <span className="bg-gradient-to-r from-sky-500 via-blue-500 to-violet-500 bg-clip-text text-transparent">

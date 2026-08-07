@@ -19,7 +19,7 @@ export function ThemeProvider({
             <main className={cn(" mx-auto flex flex-col",containerClassName)}>
                 {children}
             </main>
-            <Footer/>
+            <Footer />
         </NextThemesProvider>
     )
 }

@@ -65,7 +65,7 @@ export function Footer() {
                             stunning images for every story.
                         </p>
 
-                        <div className="mt-3 flex flex-wrap justify-center gap-2 lg:justify-start">
+                        <div className="mt-2 flex flex-wrap justify-center gap-2 lg:justify-start">
                             {features.map((item) => (
                                 <motion.div
                                     key={item.text}

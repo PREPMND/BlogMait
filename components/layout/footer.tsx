@@ -85,7 +85,7 @@ export function Footer() {
                     {/* Right */}
                     <div className="flex flex-col items-center justify-between text-center lg:items-end lg:text-right">
                         <div>
-                            <h3 className="mb-4 text-lg font-semibold text-neutral-900 dark:text-white">
+                            <h3 className="mb-3 text-lg font-semibold text-neutral-900 dark:text-white">
                                 Connect
                             </h3>
 

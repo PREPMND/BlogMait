@@ -10,7 +10,7 @@ interface BlogCardProps {
     title: string;
     description: string;
     slug: string;
-    image?:string;
+    image?:string | undefined;
     thumbnail:string;
     username:string;
 }

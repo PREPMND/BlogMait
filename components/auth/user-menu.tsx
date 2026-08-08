@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import ThemeToggle from "@/store/theme-toggle"
 import { User } from "better-auth";
-import { LogOut, PenBox, User2Icon } from "lucide-react"
+import { LogOut, PenBox, PenBoxIcon, User2Icon } from "lucide-react"
 import Link from "next/link";
 import { signOut } from "@/lib/auth-client";
 import { toast } from "sonner";
@@ -64,6 +64,12 @@ export function UserMenu({ user }: UserMenuProps) {
 
 
                     </DropdownMenuItem>
+                    <DropdownMenuItem>
+                        <PenBoxIcon/>
+                        <Link href='/post/create'>
+                        Create Post
+                        </Link>
+                    </DropdownMenuItem>
                     {/* <DropdownMenuItem>
                         <span>ToggleTheme</span>
                         <ThemeToggle/>
@@ -73,6 +79,7 @@ export function UserMenu({ user }: UserMenuProps) {
                         <LogOut />
                         <span>{isLoading ? 'Logging out...' : 'Logout'}</span>
                     </DropdownMenuItem>
+                    
 
                 </DropdownMenuContent>
 

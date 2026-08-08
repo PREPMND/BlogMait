@@ -1,58 +1,59 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenAI } from "@google/genai";
-import { InferenceClient } from "@huggingface/inference";
+import { fal } from "@fal-ai/client";
 
-const gemini = new GoogleGenAI({
-    apiKey: process.env.GEMINI_API_KEY!,
+fal.config({
+  credentials: process.env.FAL_KEY!,
 });
 
-const hf = new InferenceClient(process.env.HF_TOKEN!);
-
 export async function POST(req: NextRequest) {
-    try {
-        const { title, description } = await req.json();
+  try {
+    const { title, description } = await req.json();
 
-        const response = await gemini.models.generateContent({
-            model: "gemini-2.5-flash",
-            contents: `
-Generate one detailed thumbnail prompt.
+    const prompt = `
+Cinematic blog thumbnail.
 
-Title:
-${title}
+Title: ${title}
+Description: ${description}
 
-Description:
-${description}
+Modern digital illustration,
+professional composition,
+highly detailed,
+beautiful lighting,
+vibrant colors,
+8k quality,
+masterpiece,
+no text.
+`.trim();
 
-Requirements:
-- Cinematic
-- Professional
-- High quality
-- Digital illustration
-- No text
-- Return ONLY the prompt.
-`,
-        });
+    const result = await fal.subscribe("fal-ai/flux/dev", {
+      input: {
+        prompt,
+      },
+    });
 
-        const prompt = response.text ?? "";
+    const image = result.data?.images?.[0]?.url;
 
-        const image = await hf.textToImage({
-            provider: "hf-inference",
-            model: "black-forest-labs/FLUX.1-dev",
-            inputs: prompt,
-        });
-
-        return new NextResponse(image, {
-            headers: {
-                "Content-Type": "image/png",
-            },
-        });
-
-    } catch (error) {
-        console.error(error);
-
-        return NextResponse.json(
-            { message: "Failed to generate image." },
-            { status: 500 }
-        );
+    if (!image) {
+      return NextResponse.json(
+        { message: "No image returned from FAL." },
+        { status: 500 }
+      );
     }
+
+    return NextResponse.json({
+      image,
+      prompt,
+    });
+  } catch (error) {
+    console.error(error);
+
+    return NextResponse.json(
+      {
+        message: error instanceof Error ? error.message : "Failed to generate image.",
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }

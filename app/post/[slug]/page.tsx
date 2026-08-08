@@ -39,7 +39,7 @@ export default function PostDetail(){
         <div className="grid  xs:grid-cols-2 lg:grid-cols-3 mb-10 mt-10 place-items-evenly gap-10 md:gap-12 lg:gap-10 ">
             {Posts.map((post)=>(
                 <div className="" key={post.id}>
-                    <Perfect3DTiltCard title={post.title} description={post.description} slug={post.slug} id={post.id} image={post.image}/>
+                    <Perfect3DTiltCard title={post.title} thumbnail="https://plus.unsplash.com/premium_photo-1785828348359-787d1ad7e44e?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" description={post.description} slug={post.slug} id={post.id} image={post.image}/>
                 </div>
             ))}
         </div>

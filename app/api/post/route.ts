@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-
+import cloudinary from "@/lib/cloudinary";
 import { auth } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { posts } from "@/lib/db/schema";
+
 
 export async function POST(req: NextRequest) {
     try {
@@ -28,11 +29,7 @@ export async function POST(req: NextRequest) {
             isDraft,
             isPublished,
         } = body;
-        if (
-            !title ||
-            !description ||
-            !slug
-        ) {
+        if (!title || !description || !slug) {
             return NextResponse.json(
                 {
                     message: "Please fill all required fields.",
@@ -42,16 +39,36 @@ export async function POST(req: NextRequest) {
                 }
             );
         }
+        let finalThumbnail = thumbnail;
+
+        if (
+            typeof thumbnail === "string" &&
+            thumbnail.startsWith("data:image")
+        ) {
+            const uploadResult = await cloudinary.uploader.upload(thumbnail, {
+                folder: "blog-thumbnails",
+            });
+
+            finalThumbnail = uploadResult.secure_url;
+        }
+
+
         const existingPost = await db.query.posts.findFirst({
             where: (posts, { eq }) => eq(posts.slug, slug),
         });
 
         if (existingPost) {
             return NextResponse.json(
-                { message: "Slug already exists." },
-                { status: 409 }
+                {
+                    message: "Slug already exists.",
+                },
+                {
+                    status: 409,
+                }
             );
         }
+
+
 
         const createdPost = await db
             .insert(posts)
@@ -59,8 +76,8 @@ export async function POST(req: NextRequest) {
                 title,
                 description,
                 slug,
-                thumbnail,
-                imageSource,
+                thumbnail: finalThumbnail,
+                imageSource: imageSource ?? "ai",
                 isDraft,
                 isPublished,
                 authorId: session.user.id,

@@ -1,15 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
-import { fal } from "@fal-ai/client";
-
-fal.config({
-  credentials: process.env.FAL_KEY!,
-});
 
 export async function POST(req: NextRequest) {
-  try {
-    const { title, description } = await req.json();
+    try {
+        const { title, description } = await req.json();
 
-    const prompt = `
+        const prompt = `
 Cinematic blog thumbnail.
 
 Title: ${title}
@@ -23,37 +18,55 @@ vibrant colors,
 8k quality,
 masterpiece,
 no text.
-`.trim();
+        `.trim();
 
-    const result = await fal.subscribe("fal-ai/flux/dev", {
-      input: {
-        prompt,
-      },
-    });
+        const response = await fetch(
+            "https://router.huggingface.co/nscale/v1/images/generations",
+            {
+                method: "POST",
+                headers: {
+                    Authorization: `Bearer ${process.env.HF_TOKEN}`,
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    model: "black-forest-labs/FLUX.1-schnell",
+                    prompt,
+                    response_format: "b64_json",
+                }),
+            }
+        );
 
-    const image = result.data?.images?.[0]?.url;
+        if (!response.ok) {
+            const err = await response.text();
 
-    if (!image) {
-      return NextResponse.json(
-        { message: "No image returned from FAL." },
-        { status: 500 }
-      );
+            return NextResponse.json(
+                {
+                    message: err,
+                },
+                {
+                    status: response.status,
+                }
+            );
+        }
+
+        const result = await response.json();
+
+        const image = `data:image/png;base64,${result.data[0].b64_json}`;
+
+        return NextResponse.json({
+            image,
+            prompt,
+        });
+    } catch (error) {
+        console.error(error);
+
+        return NextResponse.json(
+            {
+                message: "Failed to generate image.",
+            },
+            {
+                status: 500,
+            }
+        );
     }
-
-    return NextResponse.json({
-      image,
-      prompt,
-    });
-  } catch (error) {
-    console.error(error);
-
-    return NextResponse.json(
-      {
-        message: error instanceof Error ? error.message : "Failed to generate image.",
-      },
-      {
-        status: 500,
-      }
-    );
-  }
 }

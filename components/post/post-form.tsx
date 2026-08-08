@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { CldUploadWidget } from "next-cloudinary";
 import { toast } from "sonner";
-
+import cloudinary from "@/lib/cloudinary";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -43,20 +43,17 @@ export function PostForm() {
     });
 
     const generateAIThumbnail = async () => {
-        setError("");
+        const title = form.getValues("title");
+        const description = form.getValues("description");
 
-        const title = form.getValues("title").trim();
-        const description = form.getValues("description").trim();
-
-        if (!title || !description) {
-            toast.error("Enter title and description first.");
-            setError("Enter title and description first.");
+        if (!title.trim() || !description.trim()) {
+            toast.error("Please enter title and description first.");
             return;
         }
 
-        try {
-            setAiLoading(true);
+        setAiLoading(true);
 
+        try {
             const res = await fetch("/api/ai/thumbnail", {
                 method: "POST",
                 headers: {
@@ -71,24 +68,20 @@ export function PostForm() {
             const data = await res.json();
 
             if (!res.ok) {
-                throw new Error(
-                    data.message ??
-                    "Failed to generate thumbnail."
-                );
+                throw new Error(data.message || "Failed to generate image.");
             }
 
+            // Your API returns { image }
             setThumbnail(data.image);
             setImageSource("ai");
 
-            toast.success("AI thumbnail generated.");
+            toast.success("Thumbnail generated!");
         } catch (err) {
-            const message =
+            toast.error(
                 err instanceof Error
                     ? err.message
-                    : "Failed to generate thumbnail.";
-
-            setError(message);
-            toast.error(message);
+                    : "Failed to generate thumbnail."
+            );
         } finally {
             setAiLoading(false);
         }
@@ -103,7 +96,7 @@ export function PostForm() {
 
         try {
             setCreating(true);
-
+            
             const res = await fetch("/api/post", {
                 method: "POST",
                 headers: {
@@ -229,7 +222,7 @@ export function PostForm() {
                         <Button
                             type="button"
                             variant="outline"
-                            disabled={uploading}
+                            disabled={uploading || aiLoading}
                             onClick={() => {
                                 setUploading(true);
                                 open();
@@ -268,12 +261,34 @@ export function PostForm() {
                         Thumbnail Preview
                     </Label>
 
-                    <img
-                        src={thumbnail}
-                        alt="Thumbnail"
-                        className="h-56 w-full rounded-xl border object-cover"
-                    />
+                    <div className="overflow-hidden rounded-xl border">
+                        <img
+                            src={thumbnail}
+                            alt="Thumbnail"
+                            className="aspect-video w-full object-cover"
+                        />
+                    </div>
+                    <div className="flex gap-2">
+                        <Button
+                            type="button"
+                            variant="secondary"
+                            disabled={aiLoading || uploading}
+                            onClick={generateAIThumbnail}
+                        >
+                            {aiLoading ? "Generating..." : "🔄 Regenerate"}
+                        </Button>
 
+                        <Button
+                            type="button"
+                            variant="destructive"
+                            onClick={() => {
+                                setThumbnail("");
+                                setImageSource("");
+                            }}
+                        >
+                            Remove
+                        </Button>
+                    </div>
                     <p className="text-xs text-muted-foreground">
                         Source: {imageSource}
                     </p>

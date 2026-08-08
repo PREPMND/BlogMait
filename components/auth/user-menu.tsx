@@ -15,20 +15,20 @@ interface UserMenuProps {
 
 export function UserMenu({ user }: UserMenuProps) {
     const [isLoading, setIsLoading] = useState(false);
-    const router =useRouter();
-    const handleLogout=async()=>{
+    const router = useRouter();
+    const handleLogout = async () => {
         setIsLoading(true);
-        try{
+        try {
             await signOut({
-                fetchOptions:{
-                    onSuccess:()=>{
+                fetchOptions: {
+                    onSuccess: () => {
                         toast('You have been logged out successfully');
                         router.refresh()// soft refresh
                     }
                 }
             })
 
-        }catch(e){
+        } catch (e) {
             console.log(e);
             toast('Failed to log-out')
         }
@@ -37,12 +37,13 @@ export function UserMenu({ user }: UserMenuProps) {
     return (
         <>
             <DropdownMenu >
-                <DropdownMenuTrigger asChild>
-                    <Button variant={"ghost"} className={`rounded w-14 h-14`}>
-                        <Avatar>
-                            <AvatarImage src={user?.image} alt={user?.name || "User avatar"} />
-                        </Avatar>
-                    </Button>
+                <DropdownMenuTrigger className="rounded w-14 h-14">
+                    <Avatar>
+                        <AvatarImage
+                            src={user?.image ?? undefined}
+                            alt={user?.name || "User avatar"}
+                        />
+                    </Avatar>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className={`w-56 pb-4`}>
                     <div className="flex items-center justify-between gap-4 p-2 mr-6">
@@ -50,18 +51,18 @@ export function UserMenu({ user }: UserMenuProps) {
                             <p className="font-bold">{user?.name}</p>
                             <p className="text-sm text-muted-foreground">{user?.email}</p>
                         </div>
-                        <ThemeToggle classStyle={`flex smm:hidden`}/>
-                        
+                        <ThemeToggle classStyle={`flex smm:hidden`} />
+
                     </div>
-                    
+
                     <DropdownMenuSeparator></DropdownMenuSeparator>
                     <DropdownMenuItem className={'gap-4'}>
                         <Link className="flex items-center w-full justify-start gap-7" href={'/profile'}>
-                            <User2Icon  />
+                            <User2Icon />
                             <span>Profile</span>
                         </Link>
-                        
-                        
+
+
                     </DropdownMenuItem>
                     {/* <DropdownMenuItem>
                         <span>ToggleTheme</span>
@@ -70,9 +71,9 @@ export function UserMenu({ user }: UserMenuProps) {
                     <DropdownMenuSeparator></DropdownMenuSeparator>
                     <DropdownMenuItem onClick={handleLogout} className={'flex items-center gap-7'}>
                         <LogOut />
-                        <span>{isLoading?'Logging out...':'Logout'}</span>
+                        <span>{isLoading ? 'Logging out...' : 'Logout'}</span>
                     </DropdownMenuItem>
-                    
+
                 </DropdownMenuContent>
 
 

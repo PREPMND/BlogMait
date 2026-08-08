@@ -98,30 +98,33 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image }
                     inset 0 -1px 0 rgba(255,255,255,.02)
                     `,
                 }}
-                className="glowing-card max-w-[99%] m-auto w-[300px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[330px] px-6 pt-4 pb-4 dark:bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex cursor-pointer flex-col justify-between backdrop-blur-md transition-colors duration-200  "
+                className="glowing-card max-w-[99%] m-auto w-[300px] h-[380px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[240px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[330px] px-5 pt-[10px] pb-3 dark:bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex cursor-pointer flex-col justify-between backdrop-blur-md transition-colors duration-200  "
             >
                 <div
                     className="pt-1 pointer-events-none"
                     style={{ transform: "translateZ(20px)" }}
                 >
 
-                    <h3 className="text-lg line-clamp-1 dark:text-neutral-100 font-medium tracking-tight text-neutral-800 pb-1 leading-snug">
+                    <div className="flex justify-between">
+                        <div>Name</div>
+                        <img className="rounded-full w-6 h-6" src='https://images.unsplash.com/photo-1786057054685-af5836474fd9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D'/>
+                    </div>
+                    <img className="object-cover rounded-md hover:scale-[1.05] my-2 duration-500 transition-transform ease-in-out aspect-[17/12]" src={image} alt={title} />
+                    <h3 className="text-lg max-w-[70%] line-clamp-1 dark:text-neutral-100 font-medium tracking-tight text-neutral-800 pb-1 leading-snug">
                         {title}
                     </h3>
-                    <img className="object-cover rounded-md aspect-[16/12]" src={image} alt={title} />
-
-                    <p className="text-sm text-neutral-600 dark:text-neutral-200 line-clamp-3 leading-relaxed">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-200 line-clamp-4 leading-relaxed">
                         {description}
                     </p>
                 </div>
-
-                <div
+                
+                {/* {<div
                     className="pt-1 pb-1 border-t shadow-lg border-neutral-700 flex items-center justify-center rounded-lg text-xs text-neutral-500 pointer-events-none"
                     style={{ transform: "translateZ(10px)" }}
                 >
                     <span>Double-click to open</span>
                     <span className="text-neutral-400">✦</span>
-                </div>
+                </div>} */}
             </motion.div>
         </div>
     );

@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { signUp } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
-
+import { CldUploadWidget } from "next-cloudinary";
 
 const RegisterSchema = {
     username: string().min(4).max(20),
@@ -20,14 +20,18 @@ type RegisterFormValues = {
     password: string;
     confirmPassword: string;
     username: string;
+    image?: string;
 };
 
 export default function RegisterForm() {
     const [errorRegister, seterrorRegister] = useState(false);
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
-    const [loading, setLoading] = useState(false); 
-    const router=useRouter()
+    const [loading, setLoading] = useState(false);
+    const [profilePicture, setProfilePicture] = useState("");
+    const [uploading, setUploading] = useState(false);
+    const [uploadError, setUploadError] = useState("");
+    const router = useRouter()
     const form = useForm<RegisterFormValues>({
         defaultValues: {
             email: "",
@@ -77,7 +81,8 @@ export default function RegisterForm() {
             const { error } = await signUp.email({
                 name: data.username,
                 email: data.email,
-                password: data.password
+                password: data.password,
+                image: profilePicture,
             });
 
             if (error) {
@@ -96,12 +101,12 @@ export default function RegisterForm() {
             router.refresh();
         } catch (err) {
             console.log(err);
-            
+
             seterrorRegister(true);
             setErorrMesssage("Network error. Could not reach server.");
         } finally {
             setLoading(false);
-            
+
         }
     };
 
@@ -127,7 +132,48 @@ export default function RegisterForm() {
                     {...form.register("email")}
                 />
             </div>
+            <div>
+                <CldUploadWidget
+                    uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!}
+                    onUpload={() => {
+                        setUploading(true);
+                        setUploadError("");
+                    }}
+                    onSuccess={(result: any) => {
+                        setProfilePicture(result.info.secure_url);
+                        setUploading(false);
+                    }}
+                    onError={() => {
+                        setUploadError("Failed to upload image.");
+                        setUploading(false);
+                    }}
+                >
+                    {({ open }) => (
+                        <Button
+                            type="button"
+                            variant="outline"
+                            onClick={() => open()}
+                            disabled={uploading}
+                        >
+                            {uploading ? "Uploading..." : "Upload Profile Picture"}
+                        </Button>
+                    )}
 
+                </CldUploadWidget>
+                {profilePicture && (
+                    <img
+                        src={profilePicture}
+                        alt="Profile"
+                        className="h-24 w-24 rounded-full object-cover border"
+                    />
+                )}
+                {uploadError && (
+                    <p className="text-sm text-red-500">
+                        {uploadError}
+                    </p>
+                )}
+
+            </div>
             <div className="space-y-2 w-full md:max-w-[70%] ">
                 <Label htmlFor="password"><span>   </span>Password</Label>
                 <Input
@@ -143,7 +189,7 @@ export default function RegisterForm() {
                 <Input
                     className="min-h-[38px] "
                     id="confirm-password"
-                    type="password" 
+                    type="password"
                     placeholder="Confirm your password"
                     {...form.register("confirmPassword")}
                 />
@@ -162,7 +208,7 @@ export default function RegisterForm() {
                 )}
             </div>
             <Button
-                disabled={loading} 
+                disabled={loading || uploading}
                 className={`w-[110px] mx-auto py-4 border-b-4 border-r-3 hover:scale-[1.03] transition-all duration-500 ease-in-out hover:border-b-sky-100 hover:border-r-indigo-200`}
                 type="submit"
             >

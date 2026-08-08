@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono ,Playfair_Display, Poppins, Quicksand} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-
+import { Toaster } from "sonner";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -44,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <ThemeProvider attribute={'class'}  defaultTheme="system" enableSystem disableTransitionOnChange containerClassName="md:[80%] lg:w-[75%] w-[96%] sm:w-[90%]  border-1 min-h-[100vh] dark:bg-neutral-900 bg-white/70 border-gray-300 rounded-lg shadow-sm  shadow-[0_0_15px_-3px_rgba(56,139,248,0.4),0_4px_20px_-2px_rgba(129,140,248,0.15)]
   dark:border-t-neutral-950 dark:border-b-neutral-950  dark:border-l-neutral-700 dark:border-r-neutral-700">
           {children}
+          <Toaster closeButton richColors />
         </ThemeProvider>
       </body>
 

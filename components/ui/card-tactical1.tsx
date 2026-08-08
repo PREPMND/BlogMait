@@ -14,17 +14,14 @@ export default function BlogCard1({ id, title, description, slug }: BlogCardProp
   const router = useRouter();
   const [isPressed, setIsPressed] = useState(false);
 
-  // Handle single click visual press effect
   const handleSingleClick = () => {
     setIsPressed(true);
     
-    // Smoothly lift the card back up after the click release animation completes
     setTimeout(() => {
       setIsPressed(false);
     }, 150);
   };
 
-  // Handle double click to officially route into the blog page
   const handleDoubleClick = () => {
     router.push(`/blog/${slug}`);
   };
@@ -36,17 +33,9 @@ export default function BlogCard1({ id, title, description, slug }: BlogCardProp
       className={`
         w-full max-w-sm p-5 bg-white text-slate-800 select-none cursor-pointer
         border-2 border-slate-900 rounded-2xl
-        
-        /* 1. Base Isometric Shadow Styling */
         shadow-[4px_4px_0px_0px_rgba(56,189,248,1)]
-        
-        /* 2. Transition Pipeline Settings */
         transition-all duration-150 ease-out
-        
-        /* 3. Dynamic Click Push Animation State Hook */
         ${isPressed ? "translate-x-[2px] translate-y-[2px] shadow-[2px_2px_0px_0px_rgba(56,189,248,1)]" : ""}
-        
-        /* 4. Desktop Hover Micro-Movements */
          hover:shadow-[6px_6px_0px_0px_rgba(56,189,248,1)]
         active:translate-x-[3px] active:translate-y-[3px] active:shadow-[1px_1px_0px_0px_rgba(56,189,248,1)]
       `}

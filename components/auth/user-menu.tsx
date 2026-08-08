@@ -64,10 +64,11 @@ export function UserMenu({ user }: UserMenuProps) {
 
 
                     </DropdownMenuItem>
-                    <DropdownMenuItem>
+                    <DropdownMenuItem className={'gap-4'}>
+                        
+                        <Link className="flex items-center w-full justify-start gap-7" href='/post/create'>
                         <PenBoxIcon/>
-                        <Link href='/post/create'>
-                        Create Post
+                        <span>Create Post</span>
                         </Link>
                     </DropdownMenuItem>
                     {/* <DropdownMenuItem>

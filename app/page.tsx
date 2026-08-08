@@ -23,7 +23,9 @@ export default async function Home() {
     <div className="grid xs:grid-cols-2 lg:grid-cols-3 mb-10 mt-10 place-items-evenly gap-10 md:gap-12 lg:gap-10">
       {Posts.map((post) => (
         <Perfect3DTiltCard
-          key={post.id}
+        key={post.id}
+          id={post.id}
+          slug={post.slug}
           title={post.title}
           description={post.description}
           thumbnail={post.thumbnail}

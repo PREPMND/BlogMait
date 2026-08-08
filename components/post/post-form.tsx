@@ -42,57 +42,57 @@ export function PostForm() {
         },
     });
 
-    // const generateAIThumbnail = async () => {
-    //     setError("");
+    const generateAIThumbnail = async () => {
+        setError("");
 
-    //     const title = form.getValues("title").trim();
-    //     const description = form.getValues("description").trim();
+        const title = form.getValues("title").trim();
+        const description = form.getValues("description").trim();
 
-    //     if (!title || !description) {
-    //         toast.error("Enter title and description first.");
-    //         setError("Enter title and description first.");
-    //         return;
-    //     }
+        if (!title || !description) {
+            toast.error("Enter title and description first.");
+            setError("Enter title and description first.");
+            return;
+        }
 
-    //     try {
-    //         setAiLoading(true);
+        try {
+            setAiLoading(true);
 
-    //         const res = await fetch("/api/ai/thumbnail", {
-    //             method: "POST",
-    //             headers: {
-    //                 "Content-Type": "application/json",
-    //             },
-    //             body: JSON.stringify({
-    //                 title,
-    //                 description,
-    //             }),
-    //         });
+            const res = await fetch("/api/ai/thumbnail", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    title,
+                    description,
+                }),
+            });
 
-    //         const data = await res.json();
+            const data = await res.json();
 
-    //         if (!res.ok) {
-    //             throw new Error(
-    //                 data.message ??
-    //                 "Failed to generate thumbnail."
-    //             );
-    //         }
+            if (!res.ok) {
+                throw new Error(
+                    data.message ??
+                    "Failed to generate thumbnail."
+                );
+            }
 
-    //         setThumbnail(data.image);
-    //         setImageSource("ai");
+            setThumbnail(data.image);
+            setImageSource("ai");
 
-    //         toast.success("AI thumbnail generated.");
-    //     } catch (err) {
-    //         const message =
-    //             err instanceof Error
-    //                 ? err.message
-    //                 : "Failed to generate thumbnail.";
+            toast.success("AI thumbnail generated.");
+        } catch (err) {
+            const message =
+                err instanceof Error
+                    ? err.message
+                    : "Failed to generate thumbnail.";
 
-    //         setError(message);
-    //         toast.error(message);
-    //     } finally {
-    //         setAiLoading(false);
-    //     }
-    // };
+            setError(message);
+            toast.error(message);
+        } finally {
+            setAiLoading(false);
+        }
+    };
     const onSubmit = async (data: PostFormValues) => {
         setError("");
 

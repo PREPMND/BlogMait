@@ -13,6 +13,7 @@
   /* This creates the xs utility breakpoint at 480px */
   --breakpoint-xs: 520px;
   --breakpoint-xss:560px;
+  --breakpoint-smm:390px;
 }
 
 

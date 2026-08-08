@@ -5,8 +5,9 @@ import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import { useSession } from "@/lib/auth-client"
 import { UserMenu } from "../auth/user-menu"
+import ThemeToggle from "@/store/theme-toggle"
 export default function Header() {
-    
+
     const navItems = [
         {
             label: 'Home', href: "/"
@@ -18,16 +19,16 @@ export default function Header() {
             label: 'Contact', href: "/contact"
         }
     ]
-    const {data:session,isPending}=useSession();
-    const router =useRouter();
+    const { data: session, isPending } = useSession();
+    const router = useRouter();
 
     return (
         <div className="w-full select-none px-4 pt-2 z-50 rounded-b-md rounded-l-sm rounded-r-sm bg-white dark:bg-neutral-900 pb-2 shadow-sm shadow-olive-700 dark:shadow-neutral-400 border-b border-transparent dark:border-neutral-800 sticky top-0 mb-2  md:w-[95%] mx-auto h-18 flex justify-between items-center transition-colors duration-200">
-            <div className="flex items-center h-full justify-self-start md:w-[50%]" >
+            <div className="md:flex hidden items-center h-full justify-self-start md:w-[50%]" >
                 <nav className="flex items-center gap-8 justify-between w-[60%] text-gray-700 dark:text-neutral-300">
                     {
                         navItems.map((item) => (
-                            <Link className={`${item.label == 'Contact' || item.label == 'Home' ? 'hidden md:flex' : 'flex'}
+                            <Link className={`${item.label == 'Contact' || item.label == 'Create' || item.label == 'Home' ? 'hidden md:flex' : 'flex'}
                     border-b-2 border-r-2 hover:scale-[1.02] border-gray-200 dark:border-neutral-800
                     text-[16px] md:text-[20px] 
                     hover:border-gray-400 dark:hover:border-neutral-500 transition-all duration-300 py-1 md:py-1.5 px-2 md:px-2.5 rounded-md
@@ -38,20 +39,22 @@ export default function Header() {
                     }
                 </nav>
             </div>
-            <div className="flex justify-between items-center h-full gap-2 md:gap-6">
-                <div className="md:flex md:items-center md:gap-3">
-                    <input className="min-w-[30%] border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
+            <div className="flex w-full md:w-[40%] justify-between items-center  gap-5 md:gap-6">
+                <div className="flex h-17 ml-3 md:ml-0 w-[80%] items-center md:gap-7">
+                    <input className="min-w-[30%] md:w-auto w-[80%]  border border-gray-300 dark:border-neutral-700 bg-white dark:bg-neutral-800 text-gray-900 dark:text-neutral-100 rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search...">
                     </input>
                     <Search className="hidden md:flex text-gray-500 dark:text-neutral-400" />
+                    <ThemeToggle classStyle={'hidden smm:flex'}/>
+
                 </div>
-                {isPending?null:session?.user?<UserMenu user={session.user}/>:<Button 
-                onClick={() => router.push('/auth')}
-                className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button>}
+                {isPending ? <div className="border  rounded-full h-10 w-10"></div> : session?.user ? <UserMenu user={session.user} /> : <Button
+                    onClick={() => router.push('/auth')}
+                    className="text-[18px] md:text-[20px] md:px-3 block" variant="destructive">Login</Button>}
                 {/* <Button 
                 onClick={() => router.push('/auth')}
                 className="hidden text-[18px] md:text-[20px] md:px-3 md:block" variant="destructive">Login</Button> */}
             </div>
-            
+
         </div>
 
     )

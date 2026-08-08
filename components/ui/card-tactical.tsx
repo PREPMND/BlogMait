@@ -13,6 +13,7 @@ interface BlogCardProps {
     image?:string | undefined | null;
     thumbnail:string;
     username:string;
+    href: string;
 }
 
 export default function Perfect3DTiltCard({ id, title, description, slug,image,thumbnail,username }: BlogCardProps) {

@@ -72,16 +72,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image,t
     }
 }
 
-             .glowing-card{
-              box-shadow:
-              0 20px 45px rgba(0,0,0,.12),
-              inset 0 1px 0 rgba(255,255,255,.7);
-               }
-
-            .dark .glowing-card{
-            box-shadow:
-            0 20px 45px rgba(0,0,0,.45),
-            inset 0 1px 0 rgba(255,255,255,.06);}
+             
             `}</style>
 
             <motion.div
@@ -93,15 +84,11 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image,t
                     rotateX: rotateXSpring,
                     rotateY: rotateYSpring,
                     transformStyle: "preserve-3d",
-                    backgroundImage: `
-                    radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 35%),linear-gradient(145deg, rgb(23 23 23), rgb(38 38 38)`,
-                    boxShadow: `
-                    0 20px 45px rgba(0,0,0,.45),
-                    inset 0 1px 0 rgba(255,255,255,.06),
-                    inset 0 -1px 0 rgba(255,255,255,.02)
-                    `,
+                    
                 }}
-                className="glowing-card max-w-[99%] m-auto w-[300px] h-[400px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[260px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[350px] px-5 pt-[10px] pb-3 dark:bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex cursor-pointer flex-col justify-between backdrop-blur-md transition-colors duration-200  "
+                className="glowing-card max-w-[99%] m-auto w-[300px] h-[400px] xs:w-[210px] xss:h-[280px] xss:w-[230px] xs:h-[260px]  sm:w-[250px] md:w-[300px] lg:w-[250px] md:h-[350px] px-5 pt-[10px] pb-3 :bg-gradient-to-br bg-gradient-to-br from-neutral-100 via-white to-mauve-100 dark:from-neutral-900 dark:via-neutral-950 dark:to-neutral-800  text-neutral-100 cursor-pointer border border-neutral-300 dark:border-neutral-700 rounded-2xl flex cursor-pointer flex-col justify-between backdrop-blur-md transition-colors duration-200 
+                shadow-[0_20px_45px_rgba(0,0,0,.12),inset_0_1px_0_rgba(255,255,255,.7)]
+dark:shadow-[0_20px_45px_rgba(0,0,0,.45),inset_0_1px_0_rgba(255,255,255,.06),inset_0_-1px_0_rgba(255,255,255,.02)] "
             >
                 <div
                     className="pt-1 pointer-events-none"

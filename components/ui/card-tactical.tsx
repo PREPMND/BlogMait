@@ -108,14 +108,14 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image,t
                 >
 
                     <div className="flex justify-between">
-                        <div>{username}</div>
+                        <div className="text-gray-900 dark:text-fuchsia-100">{username}</div>
                         <img className="rounded-full w-6 h-6" src={image}/>
                     </div>
                     <img className="object-cover rounded-md hover:scale-[1.05] my-2 duration-500 transition-transform ease-in-out aspect-[17/12]" src={thumbnail} alt={title} />
                     <h3 className="text-lg max-w-[70%] line-clamp-1 dark:text-neutral-100 font-medium tracking-tight text-neutral-800 pb-1 leading-snug">
                         {title}
                     </h3>
-                    <p className="text-sm text-neutral-600 dark:text-neutral-200 line-clamp-2 md:line-clamp-4 leading-relaxed">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-200 line-clamp-4 smm:line-clamp-2 md:line-clamp-4 leading-relaxed">
                         {description}
                     </p>
                 </div>

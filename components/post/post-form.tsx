@@ -135,7 +135,7 @@ export function PostForm() {
             setIsDraft(true);
             setIsPublished(false);
 
-            router.push(`/post/${body.post.slug}`);
+            router.push(`/`);
             router.refresh();
         } catch (err) {
             const message =

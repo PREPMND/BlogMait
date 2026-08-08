@@ -1,3 +1,4 @@
+import { PostForm } from "@/components/post/post-form";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function CreatePost(){
@@ -10,7 +11,7 @@ export default function CreatePost(){
                         <CardTitle className="text-center text-4xl font-medium">Create New Post</CardTitle>
                     </CardHeader>
                     <CardContent>
-
+                        <PostForm/>
                     </CardContent>
                 </Card>
             </div>

@@ -40,7 +40,8 @@ export const posts = pgTable('posts',{
     authorId:varchar('author_id', { length: 255 }).references(() => users.id).notNull(),
     isPublished:boolean('is_published'),
     isDraft:boolean('is_draft'),
-    thumnail:varchar("thumbnail", { length: 500 }).notNull(),
+    thumbnail:varchar("thumbnail", { length: 500 }).notNull(),
+    imageSource: varchar("image_source", { length: 20 }), // upload | ai
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })

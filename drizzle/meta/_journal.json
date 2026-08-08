@@ -15,6 +15,13 @@
       "when": 1786156420357,
       "tag": "0001_worried_titania",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1786179986585,
+      "tag": "0002_fancy_aqueduct",
+      "breakpoints": true
     }
   ]
 }

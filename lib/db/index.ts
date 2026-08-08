@@ -10,6 +10,15 @@ const pool = new Pool({
     }:false,
     max:10
 });
+console.log("NODE_ENV:", process.env.NODE_ENV);
+console.log(
+  "DATABASE_URL exists:",
+  !!process.env.DATABASE_URL
+);
+console.log(
+  "DATABASE_URL starts with:",
+  process.env.DATABASE_URL?.split("@")[1]
+);
 
 export const db =drizzle(pool,{schema});
 

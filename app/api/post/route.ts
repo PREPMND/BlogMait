@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
                     status: 400,
                 }
             );
-        }
+        } //ok
         let finalThumbnail = thumbnail;
 
         if (

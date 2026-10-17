@@ -29,6 +29,7 @@ export const auth=betterAuth({
         },
         disableSessionRefresh:true
     },
+    trustedOrigins: process.env.TRUSTED_ORIGINS?.split(',') ?? [],
     advanced:
     {
         useSecureCookies:process.env.NODE_ENV==='production',

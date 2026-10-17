@@ -3,6 +3,7 @@ import { Geist, Geist_Mono ,Playfair_Display, Poppins, Quicksand} from "next/fon
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { Toaster } from "sonner";
+import { LoadingBarProvider } from "@/components/ui/loading-bar";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -41,11 +42,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       suppressHydrationWarning
       className={`${playfair.variable} ${poppins.variable} ${quicksand.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute={'class'}  defaultTheme="white" enableSystem disableTransitionOnChange containerClassName="md:[80%] lg:w-[78%] w-[96%] sm:w-[90%]  border-1 min-h-[100vh] dark:bg-neutral-900 bg-white/70 border-gray-300 rounded-lg shadow-sm  shadow-[0_0_15px_-3px_rgba(56,139,248,0.4),0_4px_20px_-2px_rgba(129,140,248,0.15)]
-  dark:border-t-neutral-950 dark:border-b-neutral-950  dark:border-l-neutral-700 dark:border-r-neutral-700">
-          {children}
-          <Toaster closeButton richColors />
+      <body className="min-h-full flex flex-col overflow-x-hidden">
+        <ThemeProvider attribute={'class'}  defaultTheme="white" enableSystem disableTransitionOnChange containerClassName="md:w-[80%] lg:w-[78%] w-full sm:w-[94%] border-1 min-h-[100vh] dark:bg-neutral-900 bg-white/70 border-gray-300 rounded-lg shadow-sm shadow-[0_0_15px_-3px_rgba(56,139,248,0.4),0_4px_20px_-2px_rgba(129,140,248,0.15)]
+  dark:border-t-neutral-950 dark:border-b-neutral-950 dark:border-l-neutral-700 dark:border-r-neutral-700 overflow-x-hidden">
+          <LoadingBarProvider>
+            {children}
+          </LoadingBarProvider>
+          <Toaster closeButton richColors position="top-right" />
         </ThemeProvider>
       </body>
 

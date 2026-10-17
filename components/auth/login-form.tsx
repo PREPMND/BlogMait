@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { signIn } from "@/lib/auth-client";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
+import { useLoadingBar } from "@/components/ui/loading-bar"; 
 
 const LoginSchema = {
     email: string().min(5).max(30).contains("@").contains("."),
@@ -22,7 +23,8 @@ export default function LoginForm() {
     const [errorMessage, setErorrMesssage] = useState<string | undefined>("");
     const [success, setSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
-    const router = useRouter(); 
+    const router = useRouter();
+    const loadingBar = useLoadingBar()
 
     const form = useForm<LoginFormValues>({
         defaultValues: {
@@ -56,6 +58,7 @@ export default function LoginForm() {
         
         try {
             setLoading(true);
+            const barId = loadingBar.start("Signing in...")
             const { error } = await signIn.email({
                 email: data.email,
                 password: data.password,
@@ -64,11 +67,12 @@ export default function LoginForm() {
             if (error) {
                 seterrorLogin(true);
                 setErorrMesssage(error.message || "Invalid credentials provided.");
+                loadingBar.error(barId, "Login failed")
                 return;
             }
 
-            console.log("Valid Data:", data);
             setSuccess(true);
+            loadingBar.success(barId, "Welcome back")
 
             router.push('/');
             router.refresh();

@@ -7,6 +7,7 @@ import { useState } from "react";
 import { signUp } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { CldUploadWidget } from "next-cloudinary";
+import { useLoadingBar } from "@/components/ui/loading-bar";
 
 const RegisterSchema = {
     username: string().min(4).max(20),
@@ -32,6 +33,7 @@ export default function RegisterForm() {
     const [uploading, setUploading] = useState(false);
     const [uploadError, setUploadError] = useState("");
     const router = useRouter()
+    const loadingBar = useLoadingBar()
     const form = useForm<RegisterFormValues>({
         defaultValues: {
             email: "",
@@ -78,6 +80,7 @@ export default function RegisterForm() {
 
         try {
             setLoading(true);
+            const barId = loadingBar.start("Creating your account...")
             const { error } = await signUp.email({
                 name: data.username,
                 email: data.email,
@@ -88,15 +91,29 @@ export default function RegisterForm() {
             if (error) {
                 seterrorRegister(true);
                 setErorrMesssage(error.message || "An authentication error occurred.");
+                loadingBar.error(barId, "Registration failed")
                 return;
             }
 
-            console.log("Valid Data:", data);
+            loadingBar.success(barId, "Account created")
             setSuccess(true);
 
-            setTimeout(() => {
-                setSuccess(false);
-            }, 2500);
+            const emailBarId = loadingBar.start("Sending welcome email...")
+            try {
+                const res = await fetch("/api/email/welcome", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email: data.email, name: data.username }),
+                })
+                if (res.ok) {
+                    loadingBar.success(emailBarId, "Welcome email sent")
+                } else {
+                    loadingBar.error(emailBarId, "Email could not be sent")
+                }
+            } catch (e) {
+                loadingBar.error(emailBarId, "Email could not be sent")
+            }
+
             router.push('/');
             router.refresh();
         } catch (err) {

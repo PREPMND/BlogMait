@@ -49,8 +49,8 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image,t
         rotateY.set(0);
     };
 
-    const handleDoubleClick = () => {
-        router.push(`/blog/${slug}`);
+    const handleClick = () => {
+        router.push(`/post/${slug}`);
     };
 
     return (
@@ -79,7 +79,7 @@ export default function Perfect3DTiltCard({ id, title, description, slug,image,t
                 ref={cardRef}
                 onPointerMove={handlePointerMove}
                 onPointerLeave={handlePointerLeave}
-                onDoubleClick={handleDoubleClick}
+                onClick={handleClick}
                 style={{
                     rotateX: rotateXSpring,
                     rotateY: rotateYSpring,

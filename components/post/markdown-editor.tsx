@@ -99,7 +99,7 @@ export function MarkdownEditor({ value, onChange }: MarkdownEditorProps) {
                     }}
                 />
             ) : (
-                <div className="min-h-[400px] p-4 prose prose-neutral dark:prose-invert max-w-none">
+                <div className="min-h-[400px] p-4 prose prose-neutral dark:prose-invert max-w-none prose-code:text-foreground prose-code:bg-muted prose-pre:bg-muted prose-pre:text-foreground">
                     {value ? (
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
                             {value}
